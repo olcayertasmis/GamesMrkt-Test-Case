@@ -9,7 +9,6 @@ namespace _GameFolder.Scripts.ManagerScripts
         [Header("Data")]
         [SerializeField] private AllLevels allLevels;
 
-
         #region Data Getters
 
         public AllLevels AllLevels => allLevels;

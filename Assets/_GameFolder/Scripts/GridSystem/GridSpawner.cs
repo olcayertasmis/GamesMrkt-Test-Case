@@ -1,5 +1,3 @@
-using System;
-using _GameFolder.Scripts.Data.LevelSystem;
 using UnityEngine;
 
 namespace _GameFolder.Scripts.GridSystem

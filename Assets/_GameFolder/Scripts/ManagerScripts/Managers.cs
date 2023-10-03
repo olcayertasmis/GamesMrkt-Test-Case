@@ -5,9 +5,20 @@ namespace _GameFolder.Scripts.ManagerScripts
 {
     public class Managers : Singleton<Managers>
     {
-        public DataManager DataManager { get; private set; }
-        public GameManager GameManager { get; private set; }
-        public UIManager UiManager { get; private set; }
-        public LevelManager LevelManager { get; private set; }
+        [Header("Identifiers")]
+        [SerializeField] private DataManager dataManager;
+        [SerializeField] private GameManager gameManager;
+        [SerializeField] private LevelManager levelManager;
+        [SerializeField] private UIManager uiManager;
+
+
+        #region Manager Getters
+
+        public DataManager DataManager => dataManager;
+        public GameManager GameManager => gameManager;
+        public LevelManager LevelManager => levelManager;
+        public UIManager UIManager => uiManager;
+
+        #endregion
     } // END CLASS
 }

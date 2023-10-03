@@ -1,5 +1,3 @@
-using System;
-using _GameFolder.Scripts.ManagerScripts;
 using UnityEngine;
 
 namespace _GameFolder.Scripts.GridSystem
