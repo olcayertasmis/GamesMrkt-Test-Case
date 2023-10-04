@@ -7,11 +7,12 @@ namespace _GameFolder.Scripts
     public class Fruit : MonoBehaviour
     {
         public FruitColor FruitColor { get; private set; }
-        public int ScoreValue { get; private set; }
 
-        public Fruit(FruitColor fruitColor)
+        public void FruitSpawn(Fruit prefab, Vector2 pos, Transform parent)
         {
-            FruitColor = fruitColor;
+            var fruit = Instantiate(prefab, pos, Quaternion.identity);
+            fruit.transform.parent = parent;
+            fruit.name = "Fruit - " + pos.x + ", " + pos.y;
         }
     }
 }

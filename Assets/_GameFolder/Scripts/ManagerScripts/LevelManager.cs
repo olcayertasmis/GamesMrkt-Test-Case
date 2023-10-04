@@ -4,7 +4,7 @@ namespace _GameFolder.Scripts.ManagerScripts
 {
     public class LevelManager : MonoBehaviour
     {
-        private int _activeLevel;
+        private int _activeLevel = 0;
 
         private void Start()
         {

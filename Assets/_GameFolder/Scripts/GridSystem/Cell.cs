@@ -9,14 +9,14 @@ namespace _GameFolder.Scripts.GridSystem
 
         public void SetFruits(Fruit fruit)
         {
-            IsEmpty = false;
             FruitInCell = fruit;
+            IsEmpty = false;
         }
 
         public void ClearCell()
         {
-            IsEmpty = true;
             FruitInCell = null;
+            IsEmpty = true;
         }
     }
 }

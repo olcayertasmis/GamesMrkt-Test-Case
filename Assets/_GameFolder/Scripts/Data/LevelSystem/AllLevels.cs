@@ -1,11 +1,18 @@
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _GameFolder.Scripts.Data.LevelSystem
 {
-    [CreateAssetMenu(fileName = "NewAllLevels", menuName = "AllLevels")]
+    [CreateAssetMenu(fileName = "All Levels", menuName = "New All Levels")]
     public class AllLevels : ScriptableObject
     {
-        public List<Level> levels;
+        [Header("Levels Array")]
+        [SerializeField] private Level[] levelList;
+
+        #region Getters
+
+        public Level[] LevelList => levelList;
+
+        #endregion
     }
 }

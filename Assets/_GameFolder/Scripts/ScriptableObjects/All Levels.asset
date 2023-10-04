@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71be4299d5cedd047ae10ad0ec39ab05, type: 3}
-  m_Name: Data Manager
+  m_Script: {fileID: 11500000, guid: 60b9207ab3353e544906a40966c48940, type: 3}
+  m_Name: All Levels
   m_EditorClassIdentifier: 
-  allLevels: {fileID: 11400000, guid: 8a21246f691070643950e1742c84e242, type: 2}
-  allFruits: {fileID: 11400000, guid: 6ef89b678bf4d964f8a90a08ba4c066f, type: 2}
+  levelList:
+  - {fileID: 11400000, guid: 725829f9e9d9a3140b127cc5afa5f51d, type: 2}

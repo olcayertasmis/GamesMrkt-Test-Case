@@ -1,3 +1,4 @@
+using _GameFolder.Scripts.Data;
 using _GameFolder.Scripts.Data.LevelSystem;
 using UnityEngine;
 
@@ -8,10 +9,12 @@ namespace _GameFolder.Scripts.ManagerScripts
     {
         [Header("Data")]
         [SerializeField] private AllLevels allLevels;
+        [SerializeField] private AllFruits allFruits;
 
         #region Data Getters
 
         public AllLevels AllLevels => allLevels;
+        public AllFruits AllFruits => allFruits;
 
         #endregion
     } // END CLASS
