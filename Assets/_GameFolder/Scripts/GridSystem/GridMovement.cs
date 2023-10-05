@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 namespace _GameFolder.Scripts.GridSystem
@@ -25,6 +27,8 @@ namespace _GameFolder.Scripts.GridSystem
 
         private Fruit _otherFruit;
 
+        private RaycastHit2D _firstHitInformation;
+
         private void Awake()
         {
             _cam = Camera.main;
@@ -41,13 +45,13 @@ namespace _GameFolder.Scripts.GridSystem
         private void OnInteraction()
         {
             _firstTouchPos = _cam.ScreenToWorldPoint(Input.mousePosition);
+            _firstHitInformation = Physics2D.Raycast(_firstTouchPos, _cam.transform.forward);
             Debug.Log("first " + _firstTouchPos);
         }
 
         private void NotInteraction()
         {
-            RaycastHit2D firstHitInformation = Physics2D.Raycast(_firstTouchPos, _cam.transform.forward);
-            if (firstHitInformation.collider == null) return;
+            if (_firstHitInformation.collider == null) return;
 
             _finalTouchPos = _cam.ScreenToWorldPoint(Input.mousePosition);
             Debug.Log("final " + _finalTouchPos);
@@ -60,7 +64,7 @@ namespace _GameFolder.Scripts.GridSystem
 
         private void CalculateAngle()
         {
-            Debug.Log("test");
+            Debug.Log("CalculateAngle");
 
             _swipeAngle = Mathf.Atan2(_finalTouchPos.y - _firstTouchPos.y, _finalTouchPos.x - _firstTouchPos.x);
             _swipeAngle = _swipeAngle * 180 / Mathf.PI;
@@ -79,13 +83,28 @@ namespace _GameFolder.Scripts.GridSystem
                     break;
                 case > 45 and <= 135: // yukarı
                     Debug.Log("YUKARI");
+                    SwipeColumn(1);
                     break;
                 case < -45 and >= -135: // aşağı
                     Debug.Log("AŞAĞI");
+                    SwipeColumn(-1);
                     break;
                 case > 135 or < -135: // sola
                     Debug.Log("SOLA");
                     break;
+            }
+        }
+
+        private void SwipeColumn(int addOrSubtract)
+        {
+            var fruitPos = _firstHitInformation.transform.position;
+            var columnOfFruit = _gridSpawner.FruitColumns[(int)fruitPos.x];
+
+            foreach (var fruit in columnOfFruit)
+            {
+                var pos = fruit.transform.position;
+                pos.y += addOrSubtract;
+                fruit.transform.DOMoveY(pos.y, .5f);
             }
         }
     }
