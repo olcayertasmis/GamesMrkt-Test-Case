@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using _GameFolder.Scripts.Enums;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace _GameFolder.Scripts.Data.LevelSystem
 {

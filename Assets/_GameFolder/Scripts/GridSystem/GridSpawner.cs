@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using _GameFolder.Scripts.Data;
 using _GameFolder.Scripts.ManagerScripts;
 using UnityEngine;
@@ -14,13 +15,19 @@ namespace _GameFolder.Scripts.GridSystem
 
         private GameObject _cellPrefab;
 
-        private AllFruits _allFruits;
+        public AllFruits allFruits;
+
+        [SerializeField] private Fruit fruit;
+
+        public List<List<GameObject>> FruitColumns;
 
         private void Awake()
         {
+            _cells = null;
+
             var dataManager = Managers.Instance.DataManager;
 
-            _allFruits = dataManager.AllFruits;
+            allFruits = dataManager.AllFruits;
 
             var activeLevelIndex = Managers.Instance.LevelManager.GetActiveLevel();
             var activeLevel = dataManager.AllLevels.LevelList[activeLevelIndex];
@@ -33,34 +40,64 @@ namespace _GameFolder.Scripts.GridSystem
         private void Start()
         {
             InitializeGrid();
+            ListControl();
         }
+
+        private void Update()
+        {
+        }
+
 
         private void InitializeGrid()
         {
             _cells = new Cell[_rowCount, _columnCount];
+            FruitColumns = new List<List<GameObject>>();
 
             for (int x = 0; x < _rowCount; x++)
             {
+                var column = new List<GameObject>();
+
                 for (int y = 0; y < _columnCount; y++)
                 {
                     Vector2 pos = new Vector2(x, y);
-                    var cell = SpawnCell(pos);
+                    _cells[x, y] = SpawnCell(new Vector2(x, y));
 
-                    int fruitToUse = Random.Range(0, _allFruits.FruitList.Length);
+                    int fruitToUse = Random.Range(0, allFruits.FruitList.Length);
 
-                    var fruit = new Fruit();
-                    fruit.FruitSpawn(_allFruits.FruitList[fruitToUse], pos, cell.transform);
+                    var spawnedFruit = fruit.FruitSpawn(allFruits.FruitList[fruitToUse], pos, _cells[x, y].transform);
+                    _cells[x, y].SetFruits(spawnedFruit);
+
+                    column.Add(spawnedFruit.gameObject);
+                }
+
+                FruitColumns.Add(column);
+            }
+        }
+
+        private void ListControl()
+        {
+            for (int i = 0; i < FruitColumns.Count; i++)
+            {
+                Debug.Log("Column " + i + " has " + FruitColumns[i].Count + " fruits.");
+            }
+
+            foreach (var column in FruitColumns)
+            {
+                Debug.Log(column);
+                foreach (var fruit in column)
+                {
+                    Debug.Log(fruit.name);
                 }
             }
         }
 
-        private GameObject SpawnCell(Vector2 pos)
+        private Cell SpawnCell(Vector2 pos)
         {
             GameObject cell = Instantiate(_cellPrefab, pos, Quaternion.identity);
             cell.transform.parent = transform;
             cell.name = "Cell - " + pos.x + "," + pos.y;
 
-            return cell;
+            return cell.GetComponent<Cell>();
         }
     }
 }

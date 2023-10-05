@@ -1,5 +1,3 @@
-using System;
-using _GameFolder.Scripts.Data.LevelSystem;
 using _GameFolder.Scripts.SingletonSystem;
 using UnityEngine;
 
