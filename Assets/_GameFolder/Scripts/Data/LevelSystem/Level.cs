@@ -8,7 +8,8 @@ namespace _GameFolder.Scripts.Data.LevelSystem
     public class Level : ScriptableObject
     {
         [Header("Level Settings")]
-        [SerializeField] private int rowCount, columnCount;
+        [SerializeField] private int rowCount;
+        [SerializeField] private int columnCount;
         [SerializeField] private RequiredValues[] requiredValues;
         [SerializeField] private GameObject cellPrefab;
 
