@@ -12,7 +12,7 @@ namespace _GameFolder.Scripts
         {
             var fruit = Instantiate(prefab, pos, Quaternion.identity);
             //fruit.transform.parent = parent;
-            fruit.name = "Fruit - " + pos.x + ", " + pos.y;
+            fruit.name = "Fruit : " + pos.x + ", " + pos.y;
 
             return fruit;
         }
