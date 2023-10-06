@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace _GameFolder.Scripts
 {
-    [System.Serializable]
     public class Fruit : MonoBehaviour
     {
         [SerializeField] private FruitColor fruitColor;
