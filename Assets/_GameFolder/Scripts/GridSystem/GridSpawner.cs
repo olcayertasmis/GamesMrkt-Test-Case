@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using _GameFolder.Scripts.Data;
 using _GameFolder.Scripts.ManagerScripts;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace _GameFolder.Scripts.GridSystem
@@ -14,6 +16,7 @@ namespace _GameFolder.Scripts.GridSystem
         private int _columnCount;
 
         private GameObject _cellPrefab;
+        [SerializeField] private GameObject maskAreaPrefab;
 
         public AllFruits allFruits;
 
@@ -21,6 +24,8 @@ namespace _GameFolder.Scripts.GridSystem
 
         public List<List<GameObject>> FruitColumns;
         public List<List<GameObject>> FruitRows;
+
+        private SpriteRenderer _cellSpriteRenderer;
 
 
         private void Awake()
@@ -37,6 +42,7 @@ namespace _GameFolder.Scripts.GridSystem
             _columnCount = activeLevel.ColumnCount;
 
             _cellPrefab = activeLevel.CellPrefab;
+            _cellSpriteRenderer = _cellPrefab.GetComponent<SpriteRenderer>();
         }
 
         private void Start()
@@ -87,6 +93,14 @@ namespace _GameFolder.Scripts.GridSystem
 
                 FruitRows.Add(row);
             }
+
+            var centerPos = (_cells[_rowCount - 1, _columnCount - 1].transform.position - _cells[0, 0].transform.position) / 2;
+            var cellRadius = _cellSpriteRenderer.bounds.max.y;
+            var sizeY = Vector2.Distance(_cells[0, 0].transform.position, _cells[0, _columnCount - 1].transform.position) + cellRadius * 2;
+            var sizeX = Vector2.Distance(_cells[0, 0].transform.position, _cells[_rowCount - 1, 0].transform.position) + cellRadius * 2;
+            var maskAreaInstance = Instantiate(maskAreaPrefab);
+            maskAreaInstance.transform.position = centerPos;
+            maskAreaInstance.transform.localScale = new Vector2(sizeX, sizeY);
         }
 
         private void ListControl()
@@ -127,6 +141,18 @@ namespace _GameFolder.Scripts.GridSystem
             cell.name = "Cell - " + pos.x + "," + pos.y;
 
             return cell.GetComponent<Cell>();
+        }
+
+        public void UpdateRow(List<GameObject> row)
+        {
+            /*foreach (var VARIABLE in COLLECTION)
+            {
+
+            }*/
+        }
+
+        public void UpdateColumn()
+        {
         }
     }
 }
