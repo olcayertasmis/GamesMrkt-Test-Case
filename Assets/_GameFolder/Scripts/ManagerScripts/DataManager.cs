@@ -10,11 +10,13 @@ namespace _GameFolder.Scripts.ManagerScripts
         [Header("Data")]
         [SerializeField] private AllLevels allLevels;
         [SerializeField] private AllFruits allFruits;
+        [SerializeField] private GridSpawnerData gridSpawnerData;
 
         #region Data Getters
 
         public AllLevels AllLevels => allLevels;
         public AllFruits AllFruits => allFruits;
+        public GridSpawnerData GridSpawnerData => gridSpawnerData;
 
         #endregion
     } // END CLASS

@@ -2,29 +2,30 @@ using System.Collections.Generic;
 using _GameFolder.Scripts.Data;
 using _GameFolder.Scripts.ManagerScripts;
 using UnityEngine;
-using UnityEngine.Assertions.Must;
-using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace _GameFolder.Scripts.GridSystem
 {
     public class GridSpawner : MonoBehaviour
     {
+        [Header("Cell")]
         private Cell[,] _cells;
+        private GameObject _cellPrefab;
 
+        [Header("Grid")]
+        private GameObject _maskAreaPrefab;
         private int _rowCount;
         private int _columnCount;
 
-        private GameObject _cellPrefab;
-        [SerializeField] private GameObject maskAreaPrefab;
+        [Header("Fruit")]
+        private Fruit _fruit;
+        private AllFruits _allFruits;
 
-        public AllFruits allFruits;
-
-        [SerializeField] private Fruit fruit;
-
+        [Header("Lists")]
         public List<List<GameObject>> FruitColumns;
         public List<List<GameObject>> FruitRows;
 
+        [Header("Components")]
         private SpriteRenderer _cellSpriteRenderer;
 
 
@@ -34,10 +35,14 @@ namespace _GameFolder.Scripts.GridSystem
 
             var dataManager = Managers.Instance.DataManager;
 
-            allFruits = dataManager.AllFruits;
+            _allFruits = dataManager.AllFruits;
+
+            _fruit = dataManager.GridSpawnerData.FruitScript;
+            _maskAreaPrefab = dataManager.GridSpawnerData.MaskAreaPrefab;
 
             var activeLevelIndex = Managers.Instance.LevelManager.GetActiveLevel();
             var activeLevel = dataManager.AllLevels.LevelList[activeLevelIndex];
+
             _rowCount = activeLevel.RowCount;
             _columnCount = activeLevel.ColumnCount;
 
@@ -50,11 +55,6 @@ namespace _GameFolder.Scripts.GridSystem
             InitializeGrid();
             //ListControl();
         }
-
-        private void Update()
-        {
-        }
-
 
         private void InitializeGrid()
         {
@@ -71,9 +71,9 @@ namespace _GameFolder.Scripts.GridSystem
                     Vector2 pos = new Vector2(x, y);
                     _cells[x, y] = SpawnCell(new Vector2(x, y));
 
-                    int fruitToUse = Random.Range(0, allFruits.FruitList.Length);
+                    int fruitToUse = Random.Range(0, _allFruits.FruitList.Length);
 
-                    var spawnedFruit = fruit.FruitSpawn(allFruits.FruitList[fruitToUse], pos, _cells[x, y].transform);
+                    var spawnedFruit = _fruit.FruitSpawn(_allFruits.FruitList[fruitToUse], pos, _cells[x, y].transform);
                     _cells[x, y].SetFruits(spawnedFruit);
 
                     column.Add(spawnedFruit.gameObject);
@@ -98,7 +98,7 @@ namespace _GameFolder.Scripts.GridSystem
             var cellRadius = _cellSpriteRenderer.bounds.max.y;
             var sizeY = Vector2.Distance(_cells[0, 0].transform.position, _cells[0, _columnCount - 1].transform.position) + cellRadius * 2;
             var sizeX = Vector2.Distance(_cells[0, 0].transform.position, _cells[_rowCount - 1, 0].transform.position) + cellRadius * 2;
-            var maskAreaInstance = Instantiate(maskAreaPrefab);
+            var maskAreaInstance = Instantiate(_maskAreaPrefab);
             maskAreaInstance.transform.position = centerPos;
             maskAreaInstance.transform.localScale = new Vector2(sizeX, sizeY);
         }
