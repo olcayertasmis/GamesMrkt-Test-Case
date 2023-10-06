@@ -6,21 +6,17 @@ namespace _GameFolder.Scripts.GridSystem
 {
     public class GridMovement : MonoBehaviour
     {
+        [Header("Input Variable")]
         private Vector2 _firstTouchPos, _finalTouchPos;
-
         private bool _isTouch;
         private float _swipeAngle;
-
-        private Camera _cam;
-
-        private GridSpawner _gridSpawner;
-
-        private Fruit _otherFruit;
-
-        private RaycastHit2D _firstHitInformation;
-
         private bool _canInteract = true;
         private bool _canInteract2;
+        private RaycastHit2D _firstHitInformation;
+
+        [Header("Components")]
+        private Camera _cam;
+        private GridSpawner _gridSpawner;
 
         private void Awake()
         {
@@ -235,6 +231,8 @@ namespace _GameFolder.Scripts.GridSystem
                 rowOfFruit.RemoveAt(0);
                 rowOfFruit.Add(newFruit);
             }
+
+            _gridSpawner.UpdateRow(rowOfFruit);
         }
 
         private GameObject CloneOverflowFruitForRow(List<GameObject> rowList, int index)
