@@ -20,6 +20,8 @@ namespace _GameFolder.Scripts.GridSystem
         [SerializeField] private Fruit fruit;
 
         public List<List<GameObject>> FruitColumns;
+        public List<List<GameObject>> FruitRows;
+
 
         private void Awake()
         {
@@ -40,7 +42,7 @@ namespace _GameFolder.Scripts.GridSystem
         private void Start()
         {
             InitializeGrid();
-            ListControl();
+            //ListControl();
         }
 
         private void Update()
@@ -52,6 +54,7 @@ namespace _GameFolder.Scripts.GridSystem
         {
             _cells = new Cell[_rowCount, _columnCount];
             FruitColumns = new List<List<GameObject>>();
+            FruitRows = new List<List<GameObject>>();
 
             for (int x = 0; x < _rowCount; x++)
             {
@@ -72,6 +75,18 @@ namespace _GameFolder.Scripts.GridSystem
 
                 FruitColumns.Add(column);
             }
+
+            for (int y = 0; y < _columnCount; y++)
+            {
+                var row = new List<GameObject>();
+
+                for (int x = 0; x < _rowCount; x++)
+                {
+                    row.Add(FruitColumns[x][y]);
+                }
+
+                FruitRows.Add(row);
+            }
         }
 
         private void ListControl()
@@ -85,6 +100,20 @@ namespace _GameFolder.Scripts.GridSystem
             {
                 Debug.Log(column);
                 foreach (var fruit in column)
+                {
+                    Debug.Log(fruit.name);
+                }
+            }
+
+            for (int i = 0; i < FruitRows.Count; i++)
+            {
+                Debug.Log("Row " + i + " has " + FruitRows[i].Count + " fruits.");
+            }
+
+            foreach (var row in FruitRows)
+            {
+                Debug.Log(row);
+                foreach (var fruit in row)
                 {
                     Debug.Log(fruit.name);
                 }
