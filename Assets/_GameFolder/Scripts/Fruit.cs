@@ -13,7 +13,7 @@ namespace _GameFolder.Scripts
 
         #endregion
 
-        public Fruit FruitSpawn(Fruit prefab, Vector2 pos, Transform parent)
+        public static Fruit FruitSpawn(Fruit prefab, Vector2 pos, Transform parent)
         {
             var fruit = Instantiate(prefab, pos, Quaternion.identity);
             fruit.transform.parent = parent;
