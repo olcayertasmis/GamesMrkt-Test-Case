@@ -7,6 +7,12 @@ namespace _GameFolder.Scripts
     {
         [SerializeField] private FruitColor fruitColor;
 
+        #region Getters
+
+        public FruitColor FruitColorType => fruitColor;
+
+        #endregion
+
         public Fruit FruitSpawn(Fruit prefab, Vector2 pos, Transform parent)
         {
             var fruit = Instantiate(prefab, pos, Quaternion.identity);
