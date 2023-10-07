@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using _GameFolder.Scripts.Enums;
 using DG.Tweening;
 using UnityEngine;
 
@@ -6,12 +7,6 @@ namespace _GameFolder.Scripts.GridSystem
 {
     public class GridMovement : MonoBehaviour
     {
-        public enum MovementDirection
-        {
-            Vertical,
-            Horizontal
-        }
-
         private MovementDirection _movementDirection;
 
         [Header("Input Variable")]
