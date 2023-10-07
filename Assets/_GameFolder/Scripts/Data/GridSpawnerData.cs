@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace _GameFolder.Scripts.Data
 {
@@ -16,7 +14,6 @@ namespace _GameFolder.Scripts.Data
         public GameObject MaskAreaPrefab => maskAreaPrefab;
         public Fruit FruitScript => fruitScript;
         public Transform EmptyTransform => emptyTransform;
-        //public Transform SpawnedFruitTransform => _spawnedFruitTransform;
 
         #endregion
     }
