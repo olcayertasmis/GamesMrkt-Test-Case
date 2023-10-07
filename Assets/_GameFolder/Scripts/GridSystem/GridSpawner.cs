@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using _GameFolder.Scripts.Data;
+using _GameFolder.Scripts.Enums;
 using _GameFolder.Scripts.ManagerScripts;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -11,6 +12,7 @@ namespace _GameFolder.Scripts.GridSystem
         [Header("Cell")]
         public Cell[,] Cells;
         private GameObject _cellPrefab;
+        private Transform _cellSpawnTransform;
 
         [Header("Grid")]
         private GameObject _maskAreaPrefab;
@@ -20,6 +22,7 @@ namespace _GameFolder.Scripts.GridSystem
         [Header("Fruit")]
         private Fruit _fruit;
         private AllFruits _allFruits;
+        private Transform _fruitSpawnTransform;
 
         [Header("Lists")]
         public List<List<Fruit>> FruitColumns;
@@ -40,6 +43,9 @@ namespace _GameFolder.Scripts.GridSystem
 
             _fruit = dataManager.GridSpawnerData.FruitScript;
             _maskAreaPrefab = dataManager.GridSpawnerData.MaskAreaPrefab;
+
+            _cellSpawnTransform = dataManager.GridSpawnerData.SpawnedCellTransform;
+            _fruitSpawnTransform = dataManager.GridSpawnerData.SpawnedFruitTransform;
 
             var activeLevelIndex = Managers.Instance.LevelManager.GetActiveLevel();
             var activeLevel = dataManager.AllLevels.LevelList[activeLevelIndex];
@@ -63,11 +69,11 @@ namespace _GameFolder.Scripts.GridSystem
 
         private void OnChangedFruit(Vector2 pos, Fruit fruit)
         {
-            if (_gridMovement.GetCurrentMovementDirection() == GridMovement.MovementDirection.Horizontal) // Yatay Liste güncelleme
+            if (_gridMovement.GetCurrentMovementDirection() == MovementDirection.Horizontal) // Yatay Liste güncelleme
             {
                 FruitColumns[(int)pos.x][(int)pos.y] = fruit;
             }
-            else if (_gridMovement.GetCurrentMovementDirection() == GridMovement.MovementDirection.Vertical) // Dikey Liste güncelleme
+            else if (_gridMovement.GetCurrentMovementDirection() == MovementDirection.Vertical) // Dikey Liste güncelleme
             {
                 FruitRows[(int)pos.y][(int)pos.x] = fruit;
             }
@@ -114,6 +120,11 @@ namespace _GameFolder.Scripts.GridSystem
                 FruitRows.Add(row);
             }
 
+            SetMaskArea();
+        }
+
+        private void SetMaskArea()
+        {
             var centerPos = (Cells[_rowCount - 1, _columnCount - 1].transform.position - Cells[0, 0].transform.position) / 2;
             var cellRadius = _cellSpriteRenderer.bounds.max.y;
             var sizeY = Vector2.Distance(Cells[0, 0].transform.position, Cells[0, _columnCount - 1].transform.position) + cellRadius * 2;
@@ -157,7 +168,7 @@ namespace _GameFolder.Scripts.GridSystem
         private Cell SpawnCell(Vector2 pos)
         {
             GameObject cell = Instantiate(_cellPrefab, pos, Quaternion.identity);
-            cell.transform.parent = transform;
+            cell.transform.parent = _cellSpawnTransform;
             cell.name = "Cell - " + pos.x + "," + pos.y;
 
             return cell.GetComponent<Cell>();
