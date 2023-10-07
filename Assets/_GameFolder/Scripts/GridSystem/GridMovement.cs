@@ -6,6 +6,14 @@ namespace _GameFolder.Scripts.GridSystem
 {
     public class GridMovement : MonoBehaviour
     {
+        public enum MovementDirection
+        {
+            Vertical,
+            Horizontal
+        }
+
+        private MovementDirection _movementDirection;
+
         [Header("Input Variable")]
         private Vector2 _firstTouchPos, _finalTouchPos;
         private bool _isTouch;
@@ -18,11 +26,15 @@ namespace _GameFolder.Scripts.GridSystem
         private Camera _cam;
         private GridSpawner _gridSpawner;
 
+        private MatchFinder _matchFinder;
+
         private void Awake()
         {
             _cam = Camera.main;
 
-            _gridSpawner = FindObjectOfType<GridSpawner>();
+            _gridSpawner = GetComponent<GridSpawner>();
+
+            _matchFinder = FindObjectOfType<MatchFinder>();
         }
 
         private void Update()
@@ -38,7 +50,6 @@ namespace _GameFolder.Scripts.GridSystem
 
             _firstTouchPos = _cam.ScreenToWorldPoint(Input.mousePosition);
             _firstHitInformation = Physics2D.Raycast(_firstTouchPos, _cam.transform.forward);
-            //Debug.Log("first " + _firstTouchPos);
         }
 
         private void NotInteraction()
@@ -49,7 +60,6 @@ namespace _GameFolder.Scripts.GridSystem
             if (_firstHitInformation.collider == null) return;
 
             _finalTouchPos = _cam.ScreenToWorldPoint(Input.mousePosition);
-            //Debug.Log("final " + _finalTouchPos);
 
             CalculateAngle();
         }
@@ -87,65 +97,83 @@ namespace _GameFolder.Scripts.GridSystem
                     SlideRow(-1);
                     break;
             }
+
+            _matchFinder.FindAllMatches();
         }
 
         #region Column Scrolling Operations
 
         private void SlideColumn(int addOrSubtract)
         {
+            _movementDirection = MovementDirection.Vertical;
+
             var fruitPos = _firstHitInformation.transform.position;
-            var columnOfFruit = _gridSpawner.FruitColumns[(int)fruitPos.x];
+            var columnOfFruits = _gridSpawner.FruitColumns[(int)fruitPos.x];
 
-            GameObject newFruit = null;
-
+            GameObject cloneFruitOfTop = null;
+            GameObject cloneFruitOfBot = null;
 
             switch (addOrSubtract)
             {
                 case > 0: // Yukarı Kaydırma
-                    foreach (var fruit in columnOfFruit)
+                    foreach (var fruit in columnOfFruits)
                     {
                         var pos = fruit.transform.position;
                         pos.y += addOrSubtract;
 
-                        fruit.transform.DOMoveY(pos.y, 0.5f).OnComplete(delegate
+                        fruit.transform.DOMoveY(pos.y, 0.5f);
+
+                        if (fruit == columnOfFruits[^1])
                         {
-                            if (fruit == columnOfFruit[^1])
-                            {
-                                CloneOverflowFruitForColumn(columnOfFruit, columnOfFruit.Count - 1);
+                            cloneFruitOfBot = CloneOverflowFruitForColumn(columnOfFruits, columnOfFruits.Count - 1);
 
-                                fruit.gameObject.SetActive(false);
-                            }
-                        });
-                    }
+                            fruit.gameObject.SetActive(false);
 
-                    break;
-                case < 0: // Aşağı Kaydırma
-                    for (int i = columnOfFruit.Count - 1; i >= 0; i--)
-                    {
-                        var pos = columnOfFruit[i].transform.position;
-                        pos.y += addOrSubtract;
-
-                        columnOfFruit[i].transform.DOMoveY(pos.y, 0.5f);
-
-                        if (columnOfFruit[i] == columnOfFruit[0])
+                            _gridSpawner.Cells[(int)pos.x, 0].UpdateFruits(cloneFruitOfBot.GetComponent<Fruit>());
+                        }
+                        else
                         {
-                            newFruit = CloneOverflowFruitForColumn(columnOfFruit, 0);
-
-                            columnOfFruit[i].gameObject.SetActive(false);
+                            _gridSpawner.Cells[(int)pos.x, (int)pos.y].UpdateFruits(fruit.GetComponent<Fruit>());
                         }
                     }
 
                     break;
+                case < 0: // Aşağı Kaydırma
+                    for (int i = columnOfFruits.Count - 1; i >= 0; i--)
+                    {
+                        var pos = columnOfFruits[i].transform.position;
+                        pos.y += addOrSubtract;
+
+                        columnOfFruits[i].transform.DOMoveY(pos.y, 0.5f);
+
+                        if (columnOfFruits[i] == columnOfFruits[0])
+                        {
+                            cloneFruitOfTop = CloneOverflowFruitForColumn(columnOfFruits, 0);
+
+                            columnOfFruits[i].gameObject.SetActive(false);
+
+                            _gridSpawner.Cells[(int)pos.x, columnOfFruits.Count - 1].UpdateFruits(cloneFruitOfTop.GetComponent<Fruit>());
+                        }
+                        else _gridSpawner.Cells[(int)pos.x, (int)pos.y].UpdateFruits(columnOfFruits[i].GetComponent<Fruit>());
+                    }
+
+                    break;
             }
 
-            if (newFruit != null)
+            if (cloneFruitOfTop != null)
             {
-                columnOfFruit.RemoveAt(0);
-                columnOfFruit.Add(newFruit);
+                columnOfFruits.RemoveAt(0);
+                columnOfFruits.Add(cloneFruitOfTop);
+            }
+
+            if (cloneFruitOfBot != null)
+            {
+                columnOfFruits.RemoveAt(columnOfFruits.Count - 1);
+                columnOfFruits.Insert(0, cloneFruitOfBot);
             }
         }
 
-        private GameObject CloneOverflowFruitForColumn(List<GameObject> columnList, int index)
+        private static GameObject CloneOverflowFruitForColumn(List<GameObject> columnList, int index)
         {
             var columnInFruitCount = columnList.Count;
             var fruit = columnList[index];
@@ -154,20 +182,18 @@ namespace _GameFolder.Scripts.GridSystem
             switch (index)
             {
                 case > 0:
-                    columnList.RemoveAt(index);
                     pos.y = -1;
                     var spawnPos = new Vector3(pos.x, pos.y, pos.z);
                     var newFruit = Instantiate(fruit, spawnPos, Quaternion.identity);
-                    newFruit.name = "Fruit : " + pos.x + ", " + pos.y;
-                    columnList.Insert(0, newFruit);
+                    newFruit.name = "Fruit : " + pos.x + ", " + pos.y + 1;
                     newFruit.transform.DOMoveY(0, .1f);
+                    return newFruit;
                     break;
                 case 0:
                     pos.y = columnInFruitCount;
                     var spawnPos2 = new Vector3(pos.x, pos.y, pos.z);
                     var newFruit2 = Instantiate(fruit, spawnPos2, Quaternion.identity);
-                    newFruit2.name = "Fruit : " + pos.x + ", " + pos.y;
-
+                    newFruit2.name = "Fruit : " + pos.x + ", " + pos.y + -1;
                     newFruit2.transform.DOMoveY(columnInFruitCount - 1, .1f);
                     return newFruit2;
             }
@@ -181,11 +207,13 @@ namespace _GameFolder.Scripts.GridSystem
 
         private void SlideRow(int addOrSubtract)
         {
+            _movementDirection = MovementDirection.Horizontal;
+
             var fruitPos = _firstHitInformation.transform.position;
             var rowOfFruit = _gridSpawner.FruitRows[(int)fruitPos.y];
 
-            GameObject newFruit = null;
-
+            GameObject cloneFruitOfLeft = null;
+            GameObject cloneFruitOfRight = null;
 
             switch (addOrSubtract)
             {
@@ -195,15 +223,18 @@ namespace _GameFolder.Scripts.GridSystem
                         var pos = fruit.transform.position;
                         pos.x += addOrSubtract;
 
-                        fruit.transform.DOMoveX(pos.x, 0.5f).OnComplete(delegate
-                        {
-                            if (fruit == rowOfFruit[^1])
-                            {
-                                CloneOverflowFruitForRow(rowOfFruit, rowOfFruit.Count - 1);
+                        fruit.transform.DOMoveX(pos.x, 0.5f);
 
-                                fruit.gameObject.SetActive(false);
-                            }
-                        });
+
+                        if (fruit == rowOfFruit[^1])
+                        {
+                            cloneFruitOfLeft = CloneOverflowFruitForRow(rowOfFruit, rowOfFruit.Count - 1);
+
+                            fruit.gameObject.SetActive(false);
+
+                            _gridSpawner.Cells[0, (int)pos.y].UpdateFruits(cloneFruitOfLeft.GetComponent<Fruit>());
+                        }
+                        else _gridSpawner.Cells[(int)pos.x, (int)pos.y].UpdateFruits(fruit.GetComponent<Fruit>());
                     }
 
                     break;
@@ -217,22 +248,30 @@ namespace _GameFolder.Scripts.GridSystem
 
                         if (rowOfFruit[i] == rowOfFruit[0])
                         {
-                            newFruit = CloneOverflowFruitForRow(rowOfFruit, 0);
+                            cloneFruitOfRight = CloneOverflowFruitForRow(rowOfFruit, 0);
 
                             rowOfFruit[i].gameObject.SetActive(false);
+
+                            _gridSpawner.Cells[rowOfFruit.Count - 1, (int)pos.y].UpdateFruits(cloneFruitOfRight.GetComponent<Fruit>());
                         }
+                        else _gridSpawner.Cells[(int)pos.x, (int)pos.y].UpdateFruits(rowOfFruit[i].GetComponent<Fruit>());
                     }
 
                     break;
             }
 
-            if (newFruit != null)
+
+            if (cloneFruitOfRight != null)
             {
                 rowOfFruit.RemoveAt(0);
-                rowOfFruit.Add(newFruit);
+                rowOfFruit.Add(cloneFruitOfRight);
             }
 
-            _gridSpawner.UpdateRow(rowOfFruit);
+            if (cloneFruitOfLeft != null)
+            {
+                rowOfFruit.RemoveAt(rowOfFruit.Count - 1);
+                rowOfFruit.Insert(0, cloneFruitOfLeft);
+            }
         }
 
         private GameObject CloneOverflowFruitForRow(List<GameObject> rowList, int index)
@@ -244,26 +283,29 @@ namespace _GameFolder.Scripts.GridSystem
             switch (index)
             {
                 case > 0: // Sağa Kaydırma
-                    rowList.RemoveAt(index);
                     pos.x = -1;
                     var spawnPos = new Vector3(pos.x, pos.y, pos.z);
                     var newFruit = Instantiate(fruit, spawnPos, Quaternion.identity);
-                    newFruit.name = "Fruit : " + pos.x + ", " + pos.y;
-                    rowList.Insert(0, newFruit);
+                    newFruit.name = "Fruit : " + pos.x + 1 + ", " + pos.y;
                     newFruit.transform.DOMoveX(0, 0.1f);
                     break;
                 case 0: // Sola Kaydırma
                     pos.x = rowInFruitCount;
                     var spawnPos2 = new Vector3(pos.x, pos.y, pos.z);
                     var newFruit2 = Instantiate(fruit, spawnPos2, Quaternion.identity);
-                    newFruit2.name = "Fruit : " + pos.x + ", " + pos.y;
-
+                    newFruit2.name = "Fruit : " + pos.x + -1 + ", " + pos.y;
                     newFruit2.transform.DOMoveX(rowInFruitCount - 1, .25f);
                     return newFruit2;
             }
 
             return null;
         }
+
+        #endregion
+
+        #region Helpers
+
+        public MovementDirection GetCurrentMovementDirection() => _movementDirection;
 
         #endregion
     }
