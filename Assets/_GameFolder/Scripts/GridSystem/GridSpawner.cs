@@ -32,7 +32,6 @@ namespace _GameFolder.Scripts.GridSystem
         private SpriteRenderer _cellSpriteRenderer;
         private GridMovement _gridMovement;
 
-
         private void Awake()
         {
             Cells = null;
@@ -44,8 +43,11 @@ namespace _GameFolder.Scripts.GridSystem
             _fruit = dataManager.GridSpawnerData.FruitScript;
             _maskAreaPrefab = dataManager.GridSpawnerData.MaskAreaPrefab;
 
-            _cellSpawnTransform = dataManager.GridSpawnerData.SpawnedCellTransform;
-            _fruitSpawnTransform = dataManager.GridSpawnerData.SpawnedFruitTransform;
+            _cellSpawnTransform = Instantiate(dataManager.GridSpawnerData.EmptyTransform);
+            _cellSpawnTransform.name = "Cells";
+
+            _fruitSpawnTransform = Instantiate(dataManager.GridSpawnerData.EmptyTransform);
+            _fruitSpawnTransform.name = "Fruits";
 
             var activeLevelIndex = Managers.Instance.LevelManager.GetActiveLevel();
             var activeLevel = dataManager.AllLevels.LevelList[activeLevelIndex];
@@ -98,7 +100,7 @@ namespace _GameFolder.Scripts.GridSystem
 
                     int fruitToUse = Random.Range(0, _allFruits.FruitList.Length);
 
-                    var spawnedFruit = _fruit.FruitSpawn(_allFruits.FruitList[fruitToUse], pos, Cells[x, y].transform);
+                    var spawnedFruit = _fruit.FruitSpawn(_allFruits.FruitList[fruitToUse], pos, _fruitSpawnTransform);
                     Cells[x, y].Initialize(spawnedFruit, new Vector2(x, y));
                     Cells[x, y].OnChangedFruit += OnChangedFruit;
 
