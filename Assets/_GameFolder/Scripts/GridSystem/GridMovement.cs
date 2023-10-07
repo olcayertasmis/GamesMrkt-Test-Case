@@ -116,7 +116,7 @@ namespace _GameFolder.Scripts.GridSystem
                         var pos = fruit.transform.position;
                         pos.y += addOrSubtract;
 
-                        fruit.transform.DOMoveY(pos.y, 0.5f);
+                        fruit.transform.DOMoveY(pos.y, 0.25f);
                         ChangeName(fruit, new Vector2(pos.x, pos.y));
 
                         if (fruit == columnOfFruits[^1])
@@ -140,7 +140,7 @@ namespace _GameFolder.Scripts.GridSystem
                         var pos = columnOfFruits[i].transform.position;
                         pos.y += addOrSubtract;
 
-                        columnOfFruits[i].transform.DOMoveY(pos.y, 0.5f);
+                        columnOfFruits[i].transform.DOMoveY(pos.y, 0.25f);
                         ChangeName(columnOfFruits[i], new Vector2(pos.x, pos.y));
 
                         if (columnOfFruits[i] == columnOfFruits[0])
@@ -183,16 +183,14 @@ namespace _GameFolder.Scripts.GridSystem
                     var spawnPos = new Vector3(pos.x, pos.y, pos.z);
                     var newFruit = Instantiate(fruit, spawnPos, Quaternion.identity);
                     ChangeName(newFruit, new Vector2(spawnPos.x, 0));
-                    //newFruit.name = "Fruit : " + pos.x + ", " + pos.y + 1;
                     newFruit.transform.DOMoveY(0, .1f);
                     return newFruit;
-                    break;
+
                 case 0: // Aşağı kaydırma - yukarıyı doldurma
                     pos.y = columnInFruitCount;
                     var spawnPos2 = new Vector3(pos.x, pos.y, pos.z);
                     var newFruit2 = Instantiate(fruit, spawnPos2, Quaternion.identity);
                     ChangeName(newFruit2, new Vector2(spawnPos2.x, columnInFruitCount - 1));
-                    //newFruit2.name = "Fruit : " + pos.x + ", " + pos.y + -1;
                     newFruit2.transform.DOMoveY(columnInFruitCount - 1, .1f);
                     return newFruit2;
             }
@@ -222,7 +220,7 @@ namespace _GameFolder.Scripts.GridSystem
                         var pos = fruit.transform.position;
                         pos.x += addOrSubtract;
 
-                        fruit.transform.DOMoveX(pos.x, 0.5f);
+                        fruit.transform.DOMoveX(pos.x, 0.25f);
                         ChangeName(fruit, new Vector2(pos.x, pos.y));
 
                         if (fruit == rowOfFruit[^1])
@@ -243,7 +241,7 @@ namespace _GameFolder.Scripts.GridSystem
                         var pos = rowOfFruit[i].transform.position;
                         pos.x += addOrSubtract;
 
-                        rowOfFruit[i].transform.DOMoveX(pos.x, 0.5f);
+                        rowOfFruit[i].transform.DOMoveX(pos.x, 0.25f);
                         ChangeName(rowOfFruit[i], new Vector2(pos.x, pos.y));
 
                         if (rowOfFruit[i] == rowOfFruit[0])
@@ -287,16 +285,14 @@ namespace _GameFolder.Scripts.GridSystem
                     var spawnPos = new Vector3(pos.x, pos.y, pos.z);
                     var newFruit = Instantiate(fruit, spawnPos, Quaternion.identity);
                     ChangeName(newFruit, new Vector2(0, spawnPos.y));
-                    //newFruit.name = "Fruit : " + pos.x + 1 + ", " + pos.y;
                     newFruit.transform.DOMoveX(0, 0.1f);
-                    break;
+                    return newFruit;
                 case 0: // Sola Kaydırma
                     pos.x = rowInFruitCount;
                     var spawnPos2 = new Vector3(pos.x, pos.y, pos.z);
                     var newFruit2 = Instantiate(fruit, spawnPos2, Quaternion.identity);
                     ChangeName(newFruit2, new Vector2(rowInFruitCount - 1, spawnPos2.y));
-                    //newFruit2.name = "Fruit : " + pos.x + -1 + ", " + pos.y;
-                    newFruit2.transform.DOMoveX(rowInFruitCount - 1, .25f);
+                    newFruit2.transform.DOMoveX(rowInFruitCount - 1, .1f);
                     return newFruit2;
             }
 
