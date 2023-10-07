@@ -64,7 +64,6 @@ namespace _GameFolder.Scripts.GridSystem
         private void Start()
         {
             InitializeGrid();
-            //ListControl();
         }
 
         #region Event Listener
@@ -96,11 +95,19 @@ namespace _GameFolder.Scripts.GridSystem
                 for (int y = 0; y < _columnCount; y++)
                 {
                     Vector2 pos = new Vector2(x, y);
-                    Cells[x, y] = SpawnCell(new Vector2(x, y));
+                    Cells[x, y] = Cell.SpawnCell(_cellPrefab, new Vector2(x, y), _cellSpawnTransform);
 
                     int fruitToUse = Random.Range(0, _allFruits.FruitList.Length);
+                    var selectedFruit = _allFruits.FruitList[fruitToUse];
 
-                    var spawnedFruit = _fruit.FruitSpawn(_allFruits.FruitList[fruitToUse], pos, _fruitSpawnTransform);
+                    while (IsSameFruitAdjacent(new Vector2(x, y), selectedFruit))
+                    {
+                        fruitToUse = Random.Range(0, _allFruits.FruitList.Length);
+                        selectedFruit = _allFruits.FruitList[fruitToUse];
+                    }
+
+                    var spawnedFruit = Fruit.FruitSpawn(selectedFruit, pos, _fruitSpawnTransform);
+
                     Cells[x, y].Initialize(spawnedFruit, new Vector2(x, y));
                     Cells[x, y].OnChangedFruit += OnChangedFruit;
 
@@ -136,6 +143,17 @@ namespace _GameFolder.Scripts.GridSystem
             maskAreaInstance.transform.localScale = new Vector2(sizeX, sizeY);
         }
 
+        private bool IsSameFruitAdjacent(Vector2 posToCheck, Fruit selectedFruit)
+        {
+            if (posToCheck.x > 0 && Cells[(int)posToCheck.x - 1, (int)posToCheck.y].fruitInCell.FruitColorType == selectedFruit.FruitColorType)
+                return true; // Üstte aynı türde meyve var
+
+            if (posToCheck.y > 0 && Cells[(int)posToCheck.x, (int)posToCheck.y - 1].fruitInCell.FruitColorType == selectedFruit.FruitColorType)
+                return true; // Solda aynı türde meyve var
+
+            return false; // Yanında aynı türde meyve yok
+        }
+
         private void ListControl()
         {
             for (int i = 0; i < FruitColumns.Count; i++)
@@ -165,15 +183,6 @@ namespace _GameFolder.Scripts.GridSystem
                     Debug.Log(fruit.name);
                 }
             }
-        }
-
-        private Cell SpawnCell(Vector2 pos)
-        {
-            GameObject cell = Instantiate(_cellPrefab, pos, Quaternion.identity);
-            cell.transform.parent = _cellSpawnTransform;
-            cell.name = "Cell - " + pos.x + "," + pos.y;
-
-            return cell.GetComponent<Cell>();
         }
     }
 }
