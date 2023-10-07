@@ -9,7 +9,7 @@ namespace _GameFolder.Scripts.GridSystem
     public class GridSpawner : MonoBehaviour
     {
         [Header("Cell")]
-        private Cell[,] _cells;
+        public Cell[,] Cells;
         private GameObject _cellPrefab;
 
         [Header("Grid")]
@@ -27,11 +27,12 @@ namespace _GameFolder.Scripts.GridSystem
 
         [Header("Components")]
         private SpriteRenderer _cellSpriteRenderer;
+        private GridMovement _gridMovement;
 
 
         private void Awake()
         {
-            _cells = null;
+            Cells = null;
 
             var dataManager = Managers.Instance.DataManager;
 
@@ -48,6 +49,8 @@ namespace _GameFolder.Scripts.GridSystem
 
             _cellPrefab = activeLevel.CellPrefab;
             _cellSpriteRenderer = _cellPrefab.GetComponent<SpriteRenderer>();
+
+            _gridMovement = GetComponent<GridMovement>();
         }
 
         private void Start()
@@ -56,9 +59,25 @@ namespace _GameFolder.Scripts.GridSystem
             //ListControl();
         }
 
+        #region Event Listener
+
+        private void OnChangedFruit(Vector2 pos, Fruit fruit)
+        {
+            if (_gridMovement.GetCurrentMovementDirection() == GridMovement.MovementDirection.Horizontal) // Yatay Liste güncelleme
+            {
+                FruitColumns[(int)pos.x][(int)pos.y] = fruit.gameObject;
+            }
+            else if (_gridMovement.GetCurrentMovementDirection() == GridMovement.MovementDirection.Vertical) // Dikey Liste güncelleme
+            {
+                FruitRows[(int)pos.y][(int)pos.x] = fruit.gameObject;
+            }
+        }
+
+        #endregion
+
         private void InitializeGrid()
         {
-            _cells = new Cell[_rowCount, _columnCount];
+            Cells = new Cell[_rowCount, _columnCount];
             FruitColumns = new List<List<GameObject>>();
             FruitRows = new List<List<GameObject>>();
 
@@ -69,12 +88,13 @@ namespace _GameFolder.Scripts.GridSystem
                 for (int y = 0; y < _columnCount; y++)
                 {
                     Vector2 pos = new Vector2(x, y);
-                    _cells[x, y] = SpawnCell(new Vector2(x, y));
+                    Cells[x, y] = SpawnCell(new Vector2(x, y));
 
                     int fruitToUse = Random.Range(0, _allFruits.FruitList.Length);
 
-                    var spawnedFruit = _fruit.FruitSpawn(_allFruits.FruitList[fruitToUse], pos, _cells[x, y].transform);
-                    _cells[x, y].SetFruits(spawnedFruit);
+                    var spawnedFruit = _fruit.FruitSpawn(_allFruits.FruitList[fruitToUse], pos, Cells[x, y].transform);
+                    Cells[x, y].Initialize(spawnedFruit, new Vector2(x, y));
+                    Cells[x, y].OnChangedFruit += OnChangedFruit;
 
                     column.Add(spawnedFruit.gameObject);
                 }
@@ -94,10 +114,10 @@ namespace _GameFolder.Scripts.GridSystem
                 FruitRows.Add(row);
             }
 
-            var centerPos = (_cells[_rowCount - 1, _columnCount - 1].transform.position - _cells[0, 0].transform.position) / 2;
+            var centerPos = (Cells[_rowCount - 1, _columnCount - 1].transform.position - Cells[0, 0].transform.position) / 2;
             var cellRadius = _cellSpriteRenderer.bounds.max.y;
-            var sizeY = Vector2.Distance(_cells[0, 0].transform.position, _cells[0, _columnCount - 1].transform.position) + cellRadius * 2;
-            var sizeX = Vector2.Distance(_cells[0, 0].transform.position, _cells[_rowCount - 1, 0].transform.position) + cellRadius * 2;
+            var sizeY = Vector2.Distance(Cells[0, 0].transform.position, Cells[0, _columnCount - 1].transform.position) + cellRadius * 2;
+            var sizeX = Vector2.Distance(Cells[0, 0].transform.position, Cells[_rowCount - 1, 0].transform.position) + cellRadius * 2;
             var maskAreaInstance = Instantiate(_maskAreaPrefab);
             maskAreaInstance.transform.position = centerPos;
             maskAreaInstance.transform.localScale = new Vector2(sizeX, sizeY);
@@ -141,18 +161,6 @@ namespace _GameFolder.Scripts.GridSystem
             cell.name = "Cell - " + pos.x + "," + pos.y;
 
             return cell.GetComponent<Cell>();
-        }
-
-        public void UpdateRow(List<GameObject> row)
-        {
-            /*foreach (var VARIABLE in COLLECTION)
-            {
-
-            }*/
-        }
-
-        public void UpdateColumn()
-        {
         }
     }
 }
