@@ -7,10 +7,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b17ae353f669ff459fa67e66e2eeb0d, type: 3}
   m_Name: Grid Spawner Data
   m_EditorClassIdentifier: 
   maskAreaPrefab: {fileID: 5876667241820061876, guid: a41f8cb3c679ac14081b64877b1d064d, type: 3}
   fruitScript: {fileID: 4981220830204676714, guid: 4d03d8a871d4f034a9cdd9ba8f0b5c2d, type: 3}
+  emptyTransform: {fileID: 4133985322229677375, guid: 418660ed15543d244a50a79a917b2b8e, type: 3}
