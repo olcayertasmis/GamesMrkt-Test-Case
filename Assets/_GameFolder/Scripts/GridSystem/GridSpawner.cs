@@ -22,8 +22,8 @@ namespace _GameFolder.Scripts.GridSystem
         private AllFruits _allFruits;
 
         [Header("Lists")]
-        public List<List<GameObject>> FruitColumns;
-        public List<List<GameObject>> FruitRows;
+        public List<List<Fruit>> FruitColumns;
+        public List<List<Fruit>> FruitRows;
 
         [Header("Components")]
         private SpriteRenderer _cellSpriteRenderer;
@@ -65,11 +65,11 @@ namespace _GameFolder.Scripts.GridSystem
         {
             if (_gridMovement.GetCurrentMovementDirection() == GridMovement.MovementDirection.Horizontal) // Yatay Liste güncelleme
             {
-                FruitColumns[(int)pos.x][(int)pos.y] = fruit.gameObject;
+                FruitColumns[(int)pos.x][(int)pos.y] = fruit;
             }
             else if (_gridMovement.GetCurrentMovementDirection() == GridMovement.MovementDirection.Vertical) // Dikey Liste güncelleme
             {
-                FruitRows[(int)pos.y][(int)pos.x] = fruit.gameObject;
+                FruitRows[(int)pos.y][(int)pos.x] = fruit;
             }
         }
 
@@ -78,12 +78,12 @@ namespace _GameFolder.Scripts.GridSystem
         private void InitializeGrid()
         {
             Cells = new Cell[_rowCount, _columnCount];
-            FruitColumns = new List<List<GameObject>>();
-            FruitRows = new List<List<GameObject>>();
+            FruitColumns = new List<List<Fruit>>();
+            FruitRows = new List<List<Fruit>>();
 
             for (int x = 0; x < _rowCount; x++)
             {
-                var column = new List<GameObject>();
+                var column = new List<Fruit>();
 
                 for (int y = 0; y < _columnCount; y++)
                 {
@@ -96,7 +96,7 @@ namespace _GameFolder.Scripts.GridSystem
                     Cells[x, y].Initialize(spawnedFruit, new Vector2(x, y));
                     Cells[x, y].OnChangedFruit += OnChangedFruit;
 
-                    column.Add(spawnedFruit.gameObject);
+                    column.Add(spawnedFruit);
                 }
 
                 FruitColumns.Add(column);
@@ -104,7 +104,7 @@ namespace _GameFolder.Scripts.GridSystem
 
             for (int y = 0; y < _columnCount; y++)
             {
-                var row = new List<GameObject>();
+                var row = new List<Fruit>();
 
                 for (int x = 0; x < _rowCount; x++)
                 {

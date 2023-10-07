@@ -110,8 +110,8 @@ namespace _GameFolder.Scripts.GridSystem
             var fruitPos = _firstHitInformation.transform.position;
             var columnOfFruits = _gridSpawner.FruitColumns[(int)fruitPos.x];
 
-            GameObject cloneFruitOfTop = null;
-            GameObject cloneFruitOfBot = null;
+            Fruit cloneFruitOfTop = null;
+            Fruit cloneFruitOfBot = null;
 
             switch (addOrSubtract)
             {
@@ -173,7 +173,7 @@ namespace _GameFolder.Scripts.GridSystem
             }
         }
 
-        private static GameObject CloneOverflowFruitForColumn(List<GameObject> columnList, int index)
+        private static Fruit CloneOverflowFruitForColumn(List<Fruit> columnList, int index)
         {
             var columnInFruitCount = columnList.Count;
             var fruit = columnList[index];
@@ -212,8 +212,8 @@ namespace _GameFolder.Scripts.GridSystem
             var fruitPos = _firstHitInformation.transform.position;
             var rowOfFruit = _gridSpawner.FruitRows[(int)fruitPos.y];
 
-            GameObject cloneFruitOfLeft = null;
-            GameObject cloneFruitOfRight = null;
+            Fruit cloneFruitOfLeft = null;
+            Fruit cloneFruitOfRight = null;
 
             switch (addOrSubtract)
             {
@@ -274,7 +274,7 @@ namespace _GameFolder.Scripts.GridSystem
             }
         }
 
-        private GameObject CloneOverflowFruitForRow(List<GameObject> rowList, int index)
+        private Fruit CloneOverflowFruitForRow(List<Fruit> rowList, int index)
         {
             var rowInFruitCount = rowList.Count;
             var fruit = rowList[index];
