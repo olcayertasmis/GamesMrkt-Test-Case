@@ -159,6 +159,8 @@ namespace _GameFolder.Scripts.GridSystem
             return false; // Yanında aynı türde meyve yok
         }
 
+        #region DebugControl
+
         private void ListControl()
         {
             for (int i = 0; i < FruitColumns.Count; i++)
@@ -189,5 +191,7 @@ namespace _GameFolder.Scripts.GridSystem
                 }
             }
         }
-    }
+
+        #endregion
+    } // END CLASS
 }
