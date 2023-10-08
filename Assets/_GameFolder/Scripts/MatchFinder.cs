@@ -16,6 +16,7 @@ namespace _GameFolder.Scripts
         [Header("Other Scripts")]
         private GridSpawner _gridSpawner;
         private DataManager _dataManager;
+        private GameManager _gameManager;
 
         [Header("List")]
         private List<Fruit> _currentMatches = new List<Fruit>();
@@ -27,6 +28,8 @@ namespace _GameFolder.Scripts
             _gridSpawner = FindObjectOfType<GridSpawner>();
 
             _dataManager = Managers.Instance.DataManager;
+
+            _gameManager = Managers.Instance.GameManager;
         }
 
         private void Start()
@@ -58,6 +61,7 @@ namespace _GameFolder.Scripts
                                     _currentMatches.Add(fruitTheLeft);
                                     _currentMatches.Add(currentFruit);
                                     _currentMatches.Add(fruitTheRight);
+                                    _gameManager.MatchValueControl(currentFruit.FruitColorType);
                                 }
                             }
                         }
@@ -74,6 +78,7 @@ namespace _GameFolder.Scripts
                                     _currentMatches.Add(fruitTheUnder);
                                     _currentMatches.Add(currentFruit);
                                     _currentMatches.Add(fruitTheAbove);
+                                    _gameManager.MatchValueControl(currentFruit.FruitColorType);
                                 }
                             }
                         }
