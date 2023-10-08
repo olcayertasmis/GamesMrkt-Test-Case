@@ -211,526 +211,2332 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprite_FX_glow_burst_01_0
+      name: sprite_FX_glow_burst_blue_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 768
-        width: 192
-        height: 192
+        x: 89
+        y: 855
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 02305410000000000800000000000000
-      internalID: 21300000
+      spriteID: 3c0b5a9828a95844c8dc3301a8f1a5fb
+      internalID: 1604059587
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_FX_glow_burst_01_1
+      name: sprite_FX_glow_burst_blue_1
       rect:
         serializedVersion: 2
-        x: 192
-        y: 768
-        width: 192
-        height: 192
+        x: 245
+        y: 835
+        width: 58
+        height: 67
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 22305410000000000800000000000000
-      internalID: 21300002
+      spriteID: 1f006add7a1555f42ae9f5099d2cd451
+      internalID: 1138404585
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_FX_glow_burst_01_2
+      name: sprite_FX_glow_burst_blue_2
       rect:
         serializedVersion: 2
-        x: 384
-        y: 768
-        width: 192
-        height: 192
+        x: 445
+        y: 831
+        width: 65
+        height: 68
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 42305410000000000800000000000000
-      internalID: 21300004
+      spriteID: 3f8ef9f275388c545b6ad027618c3d97
+      internalID: -1899091673
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_FX_glow_burst_01_3
+      name: sprite_FX_glow_burst_blue_3
       rect:
         serializedVersion: 2
-        x: 576
-        y: 768
-        width: 192
-        height: 192
+        x: 637
+        y: 826
+        width: 61
+        height: 72
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 62305410000000000800000000000000
-      internalID: 21300006
+      spriteID: 9f90c9b9718c69641a7c2e338898621e
+      internalID: 1736692775
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_FX_glow_burst_01_4
+      name: sprite_FX_glow_burst_blue_4
       rect:
         serializedVersion: 2
-        x: 768
-        y: 768
-        width: 192
-        height: 192
+        x: 822
+        y: 828
+        width: 76
+        height: 73
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 82305410000000000800000000000000
-      internalID: 21300008
+      spriteID: 67a26e9d3ea191a49a1065d58c3402fb
+      internalID: 2135168216
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_FX_glow_burst_01_5
+      name: sprite_FX_glow_burst_blue_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 576
-        width: 192
-        height: 192
+        x: 53
+        y: 627
+        width: 86
+        height: 86
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a2305410000000000800000000000000
-      internalID: 21300010
+      spriteID: 29998558df655344ba36ad530b92df45
+      internalID: -344059088
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_FX_glow_burst_01_6
+      name: sprite_FX_glow_burst_blue_6
       rect:
         serializedVersion: 2
-        x: 192
-        y: 576
-        width: 192
-        height: 192
+        x: 241
+        y: 623
+        width: 94
+        height: 94
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c2305410000000000800000000000000
-      internalID: 21300012
+      spriteID: 2711de28ea141524eb1e7d32b642090c
+      internalID: 424247753
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_FX_glow_burst_01_7
+      name: sprite_FX_glow_burst_blue_7
       rect:
         serializedVersion: 2
-        x: 384
-        y: 576
-        width: 192
-        height: 192
+        x: 430
+        y: 619
+        width: 101
+        height: 102
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e2305410000000000800000000000000
-      internalID: 21300014
+      spriteID: 9e7e5f021c4028d47b4ea20861cbf684
+      internalID: 1944420353
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_FX_glow_burst_01_8
+      name: sprite_FX_glow_burst_blue_8
       rect:
         serializedVersion: 2
-        x: 576
-        y: 576
-        width: 192
-        height: 192
+        x: 620
+        y: 618
+        width: 104
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 03305410000000000800000000000000
-      internalID: 21300016
+      spriteID: 374cb5558c041e248a11a331ee5d3ad1
+      internalID: -66725487
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_FX_glow_burst_01_9
+      name: sprite_FX_glow_burst_blue_9
       rect:
         serializedVersion: 2
-        x: 768
-        y: 576
-        width: 192
-        height: 192
+        x: 811
+        y: 617
+        width: 106
+        height: 106
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 23305410000000000800000000000000
-      internalID: 21300018
+      spriteID: c771df4e43bb8ec4b9605e383c9881e6
+      internalID: -1075106076
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_FX_glow_burst_01_10
+      name: sprite_FX_glow_burst_blue_10
       rect:
         serializedVersion: 2
-        x: 0
-        y: 384
-        width: 192
-        height: 192
+        x: 607
+        y: 426
+        width: 117
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 43305410000000000800000000000000
-      internalID: 21300020
+      spriteID: b8119fb0ae8bb024f89c31d441435fdd
+      internalID: -1797541822
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_FX_glow_burst_01_11
+      name: sprite_FX_glow_burst_blue_11
       rect:
         serializedVersion: 2
-        x: 192
-        y: 384
-        width: 192
-        height: 192
+        x: 863
+        y: 536
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 63305410000000000800000000000000
-      internalID: 21300022
+      spriteID: a46f0a07b62ef8446a93c105346915d0
+      internalID: 400252116
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_FX_glow_burst_01_12
+      name: sprite_FX_glow_burst_blue_12
       rect:
         serializedVersion: 2
-        x: 384
-        y: 384
-        width: 192
-        height: 192
+        x: 42
+        y: 424
+        width: 108
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 83305410000000000800000000000000
-      internalID: 21300024
+      spriteID: 7f0e34e27651eba4f8b3aa6056b7329a
+      internalID: 222058930
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_FX_glow_burst_01_13
+      name: sprite_FX_glow_burst_blue_13
       rect:
         serializedVersion: 2
-        x: 576
-        y: 384
-        width: 192
-        height: 192
+        x: 231
+        y: 424
+        width: 111
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a3305410000000000800000000000000
-      internalID: 21300026
+      spriteID: 01f191c71f2483c46b170387d9bccf1c
+      internalID: 1370775234
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_FX_glow_burst_01_14
+      name: sprite_FX_glow_burst_blue_14
       rect:
         serializedVersion: 2
-        x: 768
-        y: 384
-        width: 192
-        height: 192
+        x: 419
+        y: 425
+        width: 114
+        height: 111
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c3305410000000000800000000000000
-      internalID: 21300028
+      spriteID: f218bab30870216438e4bcc13914858d
+      internalID: -7213401
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_FX_glow_burst_01_15
+      name: sprite_FX_glow_burst_blue_15
       rect:
         serializedVersion: 2
-        x: 0
-        y: 192
-        width: 192
-        height: 192
+        x: 809
+        y: 483
+        width: 4
+        height: 4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e3305410000000000800000000000000
-      internalID: 21300030
+      spriteID: 57bdfe17cd0205f4a96c9533edd4116a
+      internalID: -658355991
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_FX_glow_burst_01_16
+      name: sprite_FX_glow_burst_blue_16
       rect:
         serializedVersion: 2
-        x: 192
-        y: 192
-        width: 192
-        height: 192
+        x: 814
+        y: 426
+        width: 101
+        height: 110
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 04305410000000000800000000000000
-      internalID: 21300032
+      spriteID: aaea8eada6384e84ab75491a50cfdb29
+      internalID: -363860625
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_FX_glow_burst_01_17
+      name: sprite_FX_glow_burst_blue_17
       rect:
         serializedVersion: 2
-        x: 384
-        y: 192
-        width: 192
-        height: 192
+        x: 475
+        y: 365
+        width: 4
+        height: 4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 24305410000000000800000000000000
-      internalID: 21300034
+      spriteID: c494e4f2d9d4c61469c530dea16f8dfa
+      internalID: -906755579
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_FX_glow_burst_01_18
+      name: sprite_FX_glow_burst_blue_18
       rect:
         serializedVersion: 2
-        x: 576
-        y: 192
-        width: 192
-        height: 192
+        x: 626
+        y: 223
+        width: 87
+        height: 151
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 44305410000000000800000000000000
-      internalID: 21300036
+      spriteID: 69187ce166f72294eb369dfea7f0525f
+      internalID: -166516588
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_FX_glow_burst_01_19
+      name: sprite_FX_glow_burst_blue_19
       rect:
         serializedVersion: 2
-        x: 768
-        y: 192
-        width: 192
-        height: 192
+        x: 94
+        y: 351
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 64305410000000000800000000000000
-      internalID: 21300038
+      spriteID: 1c8e558bc6e875b448d0e6847ae0edd6
+      internalID: -1927373390
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_FX_glow_burst_01_20
+      name: sprite_FX_glow_burst_blue_20
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 192
-        height: 192
+        x: 285
+        y: 358
+        width: 5
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 84305410000000000800000000000000
-      internalID: 21300040
+      spriteID: 30efbec9845fa324389310b97fdc9e8f
+      internalID: -1018400681
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_FX_glow_burst_01_21
+      name: sprite_FX_glow_burst_blue_21
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
-        width: 192
-        height: 192
+        x: 34
+        y: 230
+        width: 112
+        height: 116
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a4305410000000000800000000000000
-      internalID: 21300042
+      spriteID: 50a661353dc33ff44b14c0e9ec560607
+      internalID: -834093304
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_FX_glow_burst_01_22
+      name: sprite_FX_glow_burst_blue_22
       rect:
         serializedVersion: 2
-        x: 384
-        y: 0
-        width: 192
-        height: 192
+        x: 850
+        y: 337
+        width: 4
+        height: 4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c4305410000000000800000000000000
-      internalID: 21300044
+      spriteID: 187dd5ec9ab2008408175c18dab004f4
+      internalID: -173840279
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_FX_glow_burst_01_23
+      name: sprite_FX_glow_burst_blue_23
       rect:
         serializedVersion: 2
-        x: 576
-        y: 0
-        width: 192
-        height: 192
+        x: 219
+        y: 228
+        width: 122
+        height: 105
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e4305410000000000800000000000000
-      internalID: 21300046
+      spriteID: fbf0eef0d4d6a4944a376efbde36b365
+      internalID: -2046147273
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_FX_glow_burst_01_24
+      name: sprite_FX_glow_burst_blue_24
       rect:
         serializedVersion: 2
-        x: 768
-        y: 0
-        width: 192
-        height: 192
+        x: 437
+        y: 222
+        width: 94
+        height: 109
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 05305410000000000800000000000000
-      internalID: 21300048
+      spriteID: eba4e9409620b8645ae591b851d8b278
+      internalID: 1728993147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_25
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 326
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0a6717116326e649a09712e50b916dc
+      internalID: -283571576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_26
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 328
+        width: 18
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 492fc421203d20a499631c955e92d8ce
+      internalID: 1483597326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_27
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 314
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b0e4bbe3d53a0f4cb29efc53e14a7ed
+      internalID: -750243079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_28
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 317
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4a182ed97aebec47bf11944a28d84ed
+      internalID: -930056754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_29
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 318
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5369df089ab8ed489efb36d561e7962
+      internalID: 1278420841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_30
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 320
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f73e17431ae53ef4384c6d73bc653f50
+      internalID: 1896946910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_31
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 275
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f20cbb37d08c9084a90938a43de83912
+      internalID: -818870065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_32
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 283
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb609a5eabaa55c4a9f8601a7d8c6a15
+      internalID: 1464970153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_33
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 170
+        width: 88
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cf1d057856026948a7409ed1847bd81
+      internalID: 1473900677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_34
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 282
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 244a2f092813daa49ba066460d179541
+      internalID: 683261469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_35
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 273
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db94f0cb61ddd2d4b8d8e40aea3b0491
+      internalID: 1768364678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_36
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 271
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddecc4622775f7d408c73d1252216e43
+      internalID: 91523494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_37
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 263
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ed42ce012a95864ba610f6794629f5f
+      internalID: 1751214107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_38
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 259
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f832dffefccd09a4ca3deb7eeb44fd8c
+      internalID: 490646478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_39
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 259
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 227552b4c7e9ec64c8226099dd9eac07
+      internalID: 1809787463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_40
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 265
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 194eac8d6837fbd40b53c63b04094109
+      internalID: -1555310557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_41
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 256
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3617e24a6a24178419ef1a7735c1762b
+      internalID: 1457341663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_42
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 241
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f82c9d8ccf9dfa1478c65bf47aff433d
+      internalID: 909791235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_43
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 243
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d1bea9511cbf6649a1adac818426fdc
+      internalID: -587970488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_44
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 241
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b6dcc89c9ef7734f9e9efd0fb11fa48
+      internalID: -1925547170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_45
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 242
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89d251f4d110a35439400bdf930449bb
+      internalID: -1617586957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_46
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 235
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d32839fa2fde8849948bbab025429c0
+      internalID: 647486435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_47
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 233
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6c891bb61ae5b0499f77bc671f21fe2
+      internalID: -908428011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_48
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 231
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7590ee0ede8d8645b28b04232bb49b5
+      internalID: 1250853083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_49
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 227
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8095ca7853dfa9549895a32424c98eb5
+      internalID: -1752957518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_50
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 227
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd2987153fb49d645a7da31227eb12fa
+      internalID: 871744457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_51
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 142
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc5f31c5b5a28b84981878a015f926d1
+      internalID: 1062657516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_52
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 139
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e291010bad3563498692d62058b82d7
+      internalID: 434439398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_53
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 136
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 741154979e961e042907e8f8cdea8674
+      internalID: 1453602084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_54
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 140
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e72b720fb16bbf54dbbfd334c82155b3
+      internalID: 1401964696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_55
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 139
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 110086d574d0dc94283b132cbe5ba603
+      internalID: 1863161723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_56
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 140
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e3401de0a77abf4899ba7b694719108
+      internalID: 1085964238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_57
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 107
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d180923c4321d184aa0e2742b2d08fe1
+      internalID: -826811444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_58
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 105
+        width: 19
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a87f2cd6d4bd5be49a754f52f17d359a
+      internalID: 281417533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_59
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 109
+        width: 41
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afcc103db4e73cf4cbc8e5a0d5831d59
+      internalID: -922579944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_60
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 129
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9420ec12c18b2049babda759d65d0e4
+      internalID: -1270437510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_61
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 134
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4ebd0aa86246334ab0815b6cecb81b3
+      internalID: -1904106073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_62
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 134
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73e85b9877655fb4e8526e35d7ac9e21
+      internalID: -450024729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_63
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 72
+        width: 59
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdfb5331d46a3b7428f902c290f5764c
+      internalID: -1906796886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_64
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 114
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cbbfbdb5464f664ebeb77f2fb83ca34
+      internalID: -1662365315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_65
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 83
+        width: 50
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac29075d1fe3a95448dda0980c6ae2bc
+      internalID: -1633062217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_66
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 120
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37006dde407d3cd49977e6e6575eb616
+      internalID: -1938407389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_67
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 112
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63c9f4ad637078740907020c7778418d
+      internalID: -1236579473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_68
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 102
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbeeeafdff755e543a36a6fbb06663b8
+      internalID: -1589955720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_69
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 103
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 190f4ffcdc0472e41acdbec0d3bca020
+      internalID: 1375393792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_70
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 102
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df5317bd402a8824da1c5eaad01c6478
+      internalID: 1177516681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_71
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 106
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8af3476926c504b4db37171664ccc878
+      internalID: -1748567787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_72
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 105
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54f1166203359b34f8b762fb575d2262
+      internalID: -6682945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_73
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 77
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ec3618f9655f5c41bfb21e259bfb7da
+      internalID: 58704221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_74
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 90
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d0a55e70287d334f9faaa60d0ec2c4d
+      internalID: -1417534101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_75
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 87
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af10c7b1ffd4c7c499446a770d775842
+      internalID: -460476448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_76
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 93
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d0072ab32fc7c0459373c927feccc13
+      internalID: 1239222826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_77
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 81
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80f1a7eaf6dea0c41b7f74b2cb9a1d46
+      internalID: 591708894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_78
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 86
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf831b05aa879804481ed6da963ffcb1
+      internalID: 576327544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_79
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 63
+        width: 56
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cebcf56fb79fa8c4dabeb483d85ac6a7
+      internalID: -434845709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_80
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 97
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feb9c5b8fd4c78148ac0a92932d4f0ed
+      internalID: 1625937847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_81
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 93
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2588b773498c1e4fb8ae91566bed98f
+      internalID: -762518736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_82
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 87
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71f1d3e3cad643d48812ed96c717e4a0
+      internalID: -1867867701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_83
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 85
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c283baaeda6d49a41ba071f27d2bfb9e
+      internalID: -1712710229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_84
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 92
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8ca4a785111b294cbe3d8b0aba4151f
+      internalID: 38329477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_85
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 95
+        width: 20
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5ca367fa4365054d9eef2ecf09f71dd
+      internalID: -988914313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_86
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 90
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44ea9294c0650ca448146a25e86fdb73
+      internalID: -622751390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_87
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 95
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8beb699ccba089f4d9ec671733effdb5
+      internalID: -2124612666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_88
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 86
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3507e3703b24a049934da89811660a3
+      internalID: -529623222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_89
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 89
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 444bd1e16423f5345b326a046252a94e
+      internalID: -943977067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_90
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 76
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8e75505f2b82eb4c8fbd2a37f69872f
+      internalID: -277292376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_91
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 83
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bae0305dea5d90f488471523fe2ba62b
+      internalID: -1189075282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_92
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 78
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e16b36c891d0dc41a1f3e6a0fad74c0
+      internalID: -563870754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_93
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 74
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e143c31ce117d9f4cbf24dfc7deac688
+      internalID: 127259107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_94
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 78
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 268a0d0dfef2ab746af093e5df9de371
+      internalID: 29634998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_95
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 53
+        width: 33
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf72f5f884978c2418d5b4bf081bf633
+      internalID: 1953349122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_96
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 24
+        width: 32
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ced982d16b77e149ab104a6a8df174b
+      internalID: 645449045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_97
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 49
+        width: 13
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f85b60f0630436c4c892da1d088b60ca
+      internalID: -19791527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_98
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 47
+        width: 11
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b13d6b2cc45767148929673f9c3865b7
+      internalID: 2077088234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_99
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 70
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61ca63ecabf0be945a91fb0a6f37d171
+      internalID: 570883147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_100
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 50
+        width: 33
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2b8752dc11b7b7419430a72d10d1e7d
+      internalID: -550643865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_101
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 47
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddaf2897b180ca640a03934244aed539
+      internalID: -1991485546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_102
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 58
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b358def8833d85b40b3564f92759811f
+      internalID: -2027694499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_103
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 63
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7e3e75b34e64a1428487bcac2c987da
+      internalID: -870405077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_104
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 46
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81f704e5e06a89e49bdacdd41eb7f3d9
+      internalID: -195676870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_105
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 55
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46272a696d6c1b5489f16956e34f21ad
+      internalID: 992056932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_106
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 61
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbd8526246592a445bf220a297bad2ee
+      internalID: -447918693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_107
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 56
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73665d4c6a640c34aa4526ef15a7d4bc
+      internalID: -1178275818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_108
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 53
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95cb15a48d4bde542a45a4debb0c3379
+      internalID: -1211507356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_109
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 54
+        width: 29
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a8efab34adf5264888cfbe8b702aa26
+      internalID: -1121670049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_FX_glow_burst_blue_110
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 48
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ec9729b4aebca245b016d4a93b66b77
+      internalID: -271392809
       vertices: []
       indices: 
       edges: []
@@ -738,7 +2544,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 71bbccca0c1e7c14a957fc29a9cd7e45
     internalID: 0
     vertices: []
     indices: 
@@ -746,31 +2552,117 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      sprite_FX_glow_burst_01_0: 21300000
-      sprite_FX_glow_burst_01_1: 21300002
-      sprite_FX_glow_burst_01_10: 21300020
-      sprite_FX_glow_burst_01_11: 21300022
-      sprite_FX_glow_burst_01_12: 21300024
-      sprite_FX_glow_burst_01_13: 21300026
-      sprite_FX_glow_burst_01_14: 21300028
-      sprite_FX_glow_burst_01_15: 21300030
-      sprite_FX_glow_burst_01_16: 21300032
-      sprite_FX_glow_burst_01_17: 21300034
-      sprite_FX_glow_burst_01_18: 21300036
-      sprite_FX_glow_burst_01_19: 21300038
-      sprite_FX_glow_burst_01_2: 21300004
-      sprite_FX_glow_burst_01_20: 21300040
-      sprite_FX_glow_burst_01_21: 21300042
-      sprite_FX_glow_burst_01_22: 21300044
-      sprite_FX_glow_burst_01_23: 21300046
-      sprite_FX_glow_burst_01_24: 21300048
-      sprite_FX_glow_burst_01_3: 21300006
-      sprite_FX_glow_burst_01_4: 21300008
-      sprite_FX_glow_burst_01_5: 21300010
-      sprite_FX_glow_burst_01_6: 21300012
-      sprite_FX_glow_burst_01_7: 21300014
-      sprite_FX_glow_burst_01_8: 21300016
-      sprite_FX_glow_burst_01_9: 21300018
+      sprite_FX_glow_burst_blue_0: 1604059587
+      sprite_FX_glow_burst_blue_1: 1138404585
+      sprite_FX_glow_burst_blue_10: -1797541822
+      sprite_FX_glow_burst_blue_100: -550643865
+      sprite_FX_glow_burst_blue_101: -1991485546
+      sprite_FX_glow_burst_blue_102: -2027694499
+      sprite_FX_glow_burst_blue_103: -870405077
+      sprite_FX_glow_burst_blue_104: -195676870
+      sprite_FX_glow_burst_blue_105: 992056932
+      sprite_FX_glow_burst_blue_106: -447918693
+      sprite_FX_glow_burst_blue_107: -1178275818
+      sprite_FX_glow_burst_blue_108: -1211507356
+      sprite_FX_glow_burst_blue_109: -1121670049
+      sprite_FX_glow_burst_blue_11: 400252116
+      sprite_FX_glow_burst_blue_110: -271392809
+      sprite_FX_glow_burst_blue_12: 222058930
+      sprite_FX_glow_burst_blue_13: 1370775234
+      sprite_FX_glow_burst_blue_14: -7213401
+      sprite_FX_glow_burst_blue_15: -658355991
+      sprite_FX_glow_burst_blue_16: -363860625
+      sprite_FX_glow_burst_blue_17: -906755579
+      sprite_FX_glow_burst_blue_18: -166516588
+      sprite_FX_glow_burst_blue_19: -1927373390
+      sprite_FX_glow_burst_blue_2: -1899091673
+      sprite_FX_glow_burst_blue_20: -1018400681
+      sprite_FX_glow_burst_blue_21: -834093304
+      sprite_FX_glow_burst_blue_22: -173840279
+      sprite_FX_glow_burst_blue_23: -2046147273
+      sprite_FX_glow_burst_blue_24: 1728993147
+      sprite_FX_glow_burst_blue_25: -283571576
+      sprite_FX_glow_burst_blue_26: 1483597326
+      sprite_FX_glow_burst_blue_27: -750243079
+      sprite_FX_glow_burst_blue_28: -930056754
+      sprite_FX_glow_burst_blue_29: 1278420841
+      sprite_FX_glow_burst_blue_3: 1736692775
+      sprite_FX_glow_burst_blue_30: 1896946910
+      sprite_FX_glow_burst_blue_31: -818870065
+      sprite_FX_glow_burst_blue_32: 1464970153
+      sprite_FX_glow_burst_blue_33: 1473900677
+      sprite_FX_glow_burst_blue_34: 683261469
+      sprite_FX_glow_burst_blue_35: 1768364678
+      sprite_FX_glow_burst_blue_36: 91523494
+      sprite_FX_glow_burst_blue_37: 1751214107
+      sprite_FX_glow_burst_blue_38: 490646478
+      sprite_FX_glow_burst_blue_39: 1809787463
+      sprite_FX_glow_burst_blue_4: 2135168216
+      sprite_FX_glow_burst_blue_40: -1555310557
+      sprite_FX_glow_burst_blue_41: 1457341663
+      sprite_FX_glow_burst_blue_42: 909791235
+      sprite_FX_glow_burst_blue_43: -587970488
+      sprite_FX_glow_burst_blue_44: -1925547170
+      sprite_FX_glow_burst_blue_45: -1617586957
+      sprite_FX_glow_burst_blue_46: 647486435
+      sprite_FX_glow_burst_blue_47: -908428011
+      sprite_FX_glow_burst_blue_48: 1250853083
+      sprite_FX_glow_burst_blue_49: -1752957518
+      sprite_FX_glow_burst_blue_5: -344059088
+      sprite_FX_glow_burst_blue_50: 871744457
+      sprite_FX_glow_burst_blue_51: 1062657516
+      sprite_FX_glow_burst_blue_52: 434439398
+      sprite_FX_glow_burst_blue_53: 1453602084
+      sprite_FX_glow_burst_blue_54: 1401964696
+      sprite_FX_glow_burst_blue_55: 1863161723
+      sprite_FX_glow_burst_blue_56: 1085964238
+      sprite_FX_glow_burst_blue_57: -826811444
+      sprite_FX_glow_burst_blue_58: 281417533
+      sprite_FX_glow_burst_blue_59: -922579944
+      sprite_FX_glow_burst_blue_6: 424247753
+      sprite_FX_glow_burst_blue_60: -1270437510
+      sprite_FX_glow_burst_blue_61: -1904106073
+      sprite_FX_glow_burst_blue_62: -450024729
+      sprite_FX_glow_burst_blue_63: -1906796886
+      sprite_FX_glow_burst_blue_64: -1662365315
+      sprite_FX_glow_burst_blue_65: -1633062217
+      sprite_FX_glow_burst_blue_66: -1938407389
+      sprite_FX_glow_burst_blue_67: -1236579473
+      sprite_FX_glow_burst_blue_68: -1589955720
+      sprite_FX_glow_burst_blue_69: 1375393792
+      sprite_FX_glow_burst_blue_7: 1944420353
+      sprite_FX_glow_burst_blue_70: 1177516681
+      sprite_FX_glow_burst_blue_71: -1748567787
+      sprite_FX_glow_burst_blue_72: -6682945
+      sprite_FX_glow_burst_blue_73: 58704221
+      sprite_FX_glow_burst_blue_74: -1417534101
+      sprite_FX_glow_burst_blue_75: -460476448
+      sprite_FX_glow_burst_blue_76: 1239222826
+      sprite_FX_glow_burst_blue_77: 591708894
+      sprite_FX_glow_burst_blue_78: 576327544
+      sprite_FX_glow_burst_blue_79: -434845709
+      sprite_FX_glow_burst_blue_8: -66725487
+      sprite_FX_glow_burst_blue_80: 1625937847
+      sprite_FX_glow_burst_blue_81: -762518736
+      sprite_FX_glow_burst_blue_82: -1867867701
+      sprite_FX_glow_burst_blue_83: -1712710229
+      sprite_FX_glow_burst_blue_84: 38329477
+      sprite_FX_glow_burst_blue_85: -988914313
+      sprite_FX_glow_burst_blue_86: -622751390
+      sprite_FX_glow_burst_blue_87: -2124612666
+      sprite_FX_glow_burst_blue_88: -529623222
+      sprite_FX_glow_burst_blue_89: -943977067
+      sprite_FX_glow_burst_blue_9: -1075106076
+      sprite_FX_glow_burst_blue_90: -277292376
+      sprite_FX_glow_burst_blue_91: -1189075282
+      sprite_FX_glow_burst_blue_92: -563870754
+      sprite_FX_glow_burst_blue_93: 127259107
+      sprite_FX_glow_burst_blue_94: 29634998
+      sprite_FX_glow_burst_blue_95: 1953349122
+      sprite_FX_glow_burst_blue_96: 645449045
+      sprite_FX_glow_burst_blue_97: -19791527
+      sprite_FX_glow_burst_blue_98: 2077088234
+      sprite_FX_glow_burst_blue_99: 570883147
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
