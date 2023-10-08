@@ -12,6 +12,9 @@ namespace _GameFolder.Scripts.GridSystem
 
         public Action<Vector2, Fruit> OnChangedFruit;
 
+        public Action<Vector2, Fruit> OnMatchedFruit;
+
+
         public static Cell SpawnCell(GameObject cellPrefab, Vector2 pos, Transform cellSpawnTransform)
         {
             GameObject cell = Instantiate(cellPrefab, pos, Quaternion.identity);
@@ -35,6 +38,14 @@ namespace _GameFolder.Scripts.GridSystem
             IsEmpty = false;
 
             OnChangedFruit?.Invoke(_cellPos, fruit);
+        }
+
+        public void UpdateMatchFinder(Fruit fruit)
+        {
+            fruitInCell = fruit;
+            IsEmpty = false;
+
+            OnMatchedFruit?.Invoke(_cellPos, fruit);
         }
 
         public void ClearCell()
