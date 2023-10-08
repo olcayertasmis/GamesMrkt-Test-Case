@@ -34,6 +34,7 @@ namespace _GameFolder.Scripts.ManagerScripts
 
         private void Update()
         {
+            Control();
             OpenNextLevelPanel();
         }
 
@@ -48,7 +49,7 @@ namespace _GameFolder.Scripts.ManagerScripts
         {
             for (int i = 0; i < requiredColor.Count; i++)
             {
-                if (requiredValue[i] == activeTrueMatchCount[i])
+                if (requiredValue[i] <= activeTrueMatchCount[i])
                 {
                     _trueMatchControl[i] = true;
                 }

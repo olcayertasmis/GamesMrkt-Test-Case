@@ -963,6 +963,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextLevelPanel: {fileID: 167429053}
+  requiredColor: 
+  requiredValue: 
+  activeTrueMatchCount: 
 --- !u!1 &1831237445
 GameObject:
   m_ObjectHideFlags: 0

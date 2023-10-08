@@ -186,6 +186,9 @@ namespace _GameFolder.Scripts
                     }
                 }
             }
+
+            Invoke(nameof(FindAllMatches), .5f);
+            
         }
     }
 }
