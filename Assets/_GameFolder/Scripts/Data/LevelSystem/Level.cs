@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using _GameFolder.Scripts.Enums;
 using UnityEngine;
@@ -10,7 +11,7 @@ namespace _GameFolder.Scripts.Data.LevelSystem
         [Header("Level Settings")]
         [SerializeField] private int rowCount;
         [SerializeField] private int columnCount;
-        [SerializeField] private RequiredValues[] requiredValues;
+        public List<RequiredValues> requiredValues;
         [SerializeField] private GameObject cellPrefab;
 
 
@@ -28,5 +29,10 @@ namespace _GameFolder.Scripts.Data.LevelSystem
         public GameObject CellPrefab => cellPrefab;
 
         #endregion
+
+        public IEnumerator GetEnumerator()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
