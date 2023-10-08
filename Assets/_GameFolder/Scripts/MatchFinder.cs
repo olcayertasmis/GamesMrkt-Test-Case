@@ -93,16 +93,17 @@ namespace _GameFolder.Scripts
 
         private void DestroyMatchedFruits()
         {
-            GameObject fx = null;
+            List<GameObject> fx = new List<GameObject>();
             foreach (var fruit in _currentMatches)
             {
                 Vector2 pos = fruit.transform.position;
                 _gridSpawner.Cells[(int)pos.x, (int)pos.y].ClearCell();
-                _gridSpawner.Cells[(int)pos.x, (int)pos.y].UpdateMatchFinder(fruit);
+
                 fruit.gameObject.SetActive(false);
-                fx = GetFx(fruit);
-                _gridSpawner.StartCoroutine(SlideFruitsDown(fx));
+                fx.Add(GetFx(fruit));
             }
+
+            _gridSpawner.StartCoroutine(SlideFruitsDown(fx));
 
             _currentMatches.Clear();
         }
@@ -128,11 +129,14 @@ namespace _GameFolder.Scripts
             return null;
         }
 
-        private IEnumerator SlideFruitsDown(GameObject fx)
+        private IEnumerator SlideFruitsDown(List<GameObject> fx)
         {
             yield return new WaitForSeconds(.2f);
 
-            fx.SetActive(false);
+            foreach (var x in fx)
+            {
+                x.gameObject.SetActive(false);
+            }
 
             int nullCounter = 0;
 
@@ -140,7 +144,10 @@ namespace _GameFolder.Scripts
             {
                 for (int y = 0; y < _gridSpawner.FruitColumns.Count; y++)
                 {
-                    if (_gridSpawner.Cells[x, y].IsEmpty) nullCounter++;
+                    if (_gridSpawner.Cells[x, y].IsEmpty)
+                    {
+                        nullCounter++;
+                    }
                     else if (nullCounter > 0)
                     {
                         var fruit = _gridSpawner.Cells[x, y].fruitInCell;
@@ -169,7 +176,7 @@ namespace _GameFolder.Scripts
             {
                 for (int y = 0; y < _gridSpawner.FruitRows.Count; y++)
                 {
-                    if (_gridSpawner.Cells[x, y] == null)
+                    if (_gridSpawner.Cells[x, y].IsEmpty)
                     {
                         int fruitToUse = Random.Range(0, _dataManager.AllFruits.FruitList.Length);
 

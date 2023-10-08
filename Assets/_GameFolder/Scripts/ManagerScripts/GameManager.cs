@@ -14,8 +14,8 @@ namespace _GameFolder.Scripts.ManagerScripts
         public List<FruitColor> requiredColor;
         public List<int> requiredValue;
 
-        public List<int> activeTrueMatchCount;
-        private List<bool> _trueMatchControl;
+        public List<int> activeTrueMatchCount = new List<int>();
+        private List<bool> _trueMatchControl = new List<bool>();
 
         private void Start()
         {

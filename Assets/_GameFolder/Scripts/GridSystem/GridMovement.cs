@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using _GameFolder.Scripts.Enums;
 using DG.Tweening;
@@ -61,8 +62,6 @@ namespace _GameFolder.Scripts.GridSystem
 
         private void CalculateAngle()
         {
-            Debug.Log("CalculateAngle");
-
             _swipeAngle = Mathf.Atan2(_finalTouchPos.y - _firstTouchPos.y, _finalTouchPos.x - _firstTouchPos.x);
             _swipeAngle = _swipeAngle * 180 / Mathf.PI;
             if (Vector3.Distance(_firstTouchPos, _finalTouchPos) > .5f)
@@ -76,22 +75,25 @@ namespace _GameFolder.Scripts.GridSystem
             switch (_swipeAngle)
             {
                 case < 45 and > -45: // sağa 
-                    Debug.Log("SAĞ");
                     SlideRow(1);
                     break;
                 case > 45 and <= 135: // yukarı
-                    Debug.Log("YUKARI");
                     SlideColumn(1);
                     break;
                 case < -45 and >= -135: // aşağı
-                    Debug.Log("AŞAĞI");
                     SlideColumn(-1);
                     break;
                 case > 135 or < -135: // sola
-                    Debug.Log("SOLA");
                     SlideRow(-1);
                     break;
             }
+
+            StartCoroutine(DelayedFindAllMatches());
+        }
+
+        private IEnumerator DelayedFindAllMatches()
+        {
+            yield return new WaitForSeconds(.5f);
 
             _matchFinder.FindAllMatches();
         }
