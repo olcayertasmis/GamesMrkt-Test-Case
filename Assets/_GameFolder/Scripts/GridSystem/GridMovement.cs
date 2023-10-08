@@ -14,15 +14,19 @@ namespace _GameFolder.Scripts.GridSystem
         private Vector2 _firstTouchPos, _finalTouchPos;
         private bool _isTouch;
         private float _swipeAngle;
-        private bool _canInteract = true;
-        private bool _canInteract2;
         private RaycastHit2D _firstHitInformation;
 
         [Header("Components")]
         private Camera _cam;
-        private GridSpawner _gridSpawner;
 
+        [Header("Other Scripts")]
+        private GridSpawner _gridSpawner;
         private MatchFinder _matchFinder;
+
+        [Header("Input Control")]
+        private bool _isMoving;
+        private bool _canInteract = true;
+        private bool _canInteract2;
 
         private void Awake()
         {
@@ -38,6 +42,8 @@ namespace _GameFolder.Scripts.GridSystem
             if (Input.GetMouseButtonDown(0) && _canInteract) OnInteraction();
             if (Input.GetMouseButtonUp(0) && _canInteract2) NotInteraction();
         }
+
+        #region Input System
 
         private void OnInteraction()
         {
@@ -64,6 +70,7 @@ namespace _GameFolder.Scripts.GridSystem
         {
             _swipeAngle = Mathf.Atan2(_finalTouchPos.y - _firstTouchPos.y, _finalTouchPos.x - _firstTouchPos.x);
             _swipeAngle = _swipeAngle * 180 / Mathf.PI;
+
             if (Vector3.Distance(_firstTouchPos, _finalTouchPos) > .5f)
             {
                 MoveCells();
@@ -72,6 +79,9 @@ namespace _GameFolder.Scripts.GridSystem
 
         private void MoveCells()
         {
+            if (_isMoving || _matchFinder.isRunning) return;
+            _isMoving = true;
+
             switch (_swipeAngle)
             {
                 case < 45 and > -45: // sağa 
@@ -90,6 +100,9 @@ namespace _GameFolder.Scripts.GridSystem
 
             StartCoroutine(DelayedFindAllMatches());
         }
+
+        #endregion
+
 
         private IEnumerator DelayedFindAllMatches()
         {
@@ -118,7 +131,13 @@ namespace _GameFolder.Scripts.GridSystem
                         var pos = fruit.transform.position;
                         pos.y += addOrSubtract;
 
-                        fruit.transform.DOMoveY(pos.y, 0.25f);
+                        fruit.transform.DOMoveY(pos.y, 0.25f).OnComplete(() =>
+                        {
+                            if (fruit == columnOfFruits[^1])
+                            {
+                                Invoke(nameof(ChangeMoveState), 0.5f);
+                            }
+                        });
                         ChangeName(fruit, new Vector2(pos.x, pos.y));
 
                         if (fruit == columnOfFruits[^1])
@@ -142,7 +161,14 @@ namespace _GameFolder.Scripts.GridSystem
                         var pos = columnOfFruits[i].transform.position;
                         pos.y += addOrSubtract;
 
-                        columnOfFruits[i].transform.DOMoveY(pos.y, 0.25f);
+                        var num = i;
+                        columnOfFruits[i].transform.DOMoveY(pos.y, 0.25f).OnComplete(() =>
+                        {
+                            if (columnOfFruits[num] == columnOfFruits[0])
+                            {
+                                Invoke(nameof(ChangeMoveState), 0.5f);
+                            }
+                        });
                         ChangeName(columnOfFruits[i], new Vector2(pos.x, pos.y));
 
                         if (columnOfFruits[i] == columnOfFruits[0])
@@ -222,7 +248,13 @@ namespace _GameFolder.Scripts.GridSystem
                         var pos = fruit.transform.position;
                         pos.x += addOrSubtract;
 
-                        fruit.transform.DOMoveX(pos.x, 0.25f);
+                        fruit.transform.DOMoveX(pos.x, 0.25f).OnComplete(() =>
+                        {
+                            if (fruit == rowOfFruit[^1])
+                            {
+                                Invoke(nameof(ChangeMoveState), 0.5f);
+                            }
+                        });
                         ChangeName(fruit, new Vector2(pos.x, pos.y));
 
                         if (fruit == rowOfFruit[^1])
@@ -243,7 +275,14 @@ namespace _GameFolder.Scripts.GridSystem
                         var pos = rowOfFruit[i].transform.position;
                         pos.x += addOrSubtract;
 
-                        rowOfFruit[i].transform.DOMoveX(pos.x, 0.25f);
+                        var num = i;
+                        rowOfFruit[i].transform.DOMoveX(pos.x, 0.25f).OnComplete(() =>
+                        {
+                            if (rowOfFruit[num] == rowOfFruit[0])
+                            {
+                                Invoke(nameof(ChangeMoveState), 0.5f);
+                            }
+                        });
                         ChangeName(rowOfFruit[i], new Vector2(pos.x, pos.y));
 
                         if (rowOfFruit[i] == rowOfFruit[0])
@@ -301,17 +340,20 @@ namespace _GameFolder.Scripts.GridSystem
             return null;
         }
 
-        private static void ChangeName(Fruit fruit, Vector2 pos)
-        {
-            fruit.name = "Fruit : " + pos.x + ", " + pos.y;
-        }
+        #endregion
+
+        #region PrivateHelpers
+
+        private static void ChangeName(Fruit fruit, Vector2 pos) => fruit.name = "Fruit : " + pos.x + ", " + pos.y;
+        private void ChangeMoveState() => _isMoving = !_isMoving;
 
         #endregion
 
-        #region Helpers
+
+        #region PublicHelpers
 
         public MovementDirection GetCurrentMovementDirection() => _movementDirection;
 
         #endregion
-    }
+    } // END CLASS
 }
