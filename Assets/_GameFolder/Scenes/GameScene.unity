@@ -1533,6 +1533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextLevelPanel: {fileID: 167429053}
   fruitImages: {fileID: 1501298833}
+  inGamePanel: {fileID: 2043018914}
   requiredColor: 
   requiredValue: 
   activeTrueMatchCount: 

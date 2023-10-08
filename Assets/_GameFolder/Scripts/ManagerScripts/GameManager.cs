@@ -13,6 +13,7 @@ namespace _GameFolder.Scripts.ManagerScripts
         [Header("UI")]
         [SerializeField] private GameObject nextLevelPanel;
         [SerializeField] private GameObject fruitImages;
+        [SerializeField] private GameObject inGamePanel;
 
         public List<FruitColor> requiredColor;
         public List<int> requiredValue;
@@ -20,7 +21,7 @@ namespace _GameFolder.Scripts.ManagerScripts
         public List<int> activeTrueMatchCount = new List<int>();
         private readonly List<bool> _trueMatchControl = new List<bool>();
 
-        private string[] imagePaths = { "blue", "red", "green", "yellow" };
+        private readonly string[] _imagePaths = { "blue", "red", "green", "yellow" };
 
         private void Start()
         {
@@ -50,19 +51,19 @@ namespace _GameFolder.Scripts.ManagerScripts
                 switch (requiredColor[i])
                 {
                     case FruitColor.Blue:
-                        imageComponent.sprite = Resources.Load<Sprite>(imagePaths[0]); // Blue resmi yükle
+                        imageComponent.sprite = Resources.Load<Sprite>(_imagePaths[0]); // Blue resmi yükle
                         tmpComponent.text = activeTrueMatchCount[i].ToString();
                         break;
                     case FruitColor.Red:
-                        imageComponent.sprite = Resources.Load<Sprite>(imagePaths[1]); // Red resmi yükle
+                        imageComponent.sprite = Resources.Load<Sprite>(_imagePaths[1]); // Red resmi yükle
                         tmpComponent.text = activeTrueMatchCount[i].ToString();
                         break;
                     case FruitColor.Green:
-                        imageComponent.sprite = Resources.Load<Sprite>(imagePaths[2]); // Green resmi yükle
+                        imageComponent.sprite = Resources.Load<Sprite>(_imagePaths[2]); // Green resmi yükle
                         tmpComponent.text = activeTrueMatchCount[i].ToString();
                         break;
                     case FruitColor.Yellow:
-                        imageComponent.sprite = Resources.Load<Sprite>(imagePaths[3]); // Yellow resmi yükle
+                        imageComponent.sprite = Resources.Load<Sprite>(_imagePaths[3]); // Yellow resmi yükle
                         tmpComponent.text = activeTrueMatchCount[i].ToString();
                         break;
                 }
@@ -79,7 +80,11 @@ namespace _GameFolder.Scripts.ManagerScripts
         {
             bool allTrue = AreAllTrue(_trueMatchControl);
 
-            if (allTrue) nextLevelPanel.SetActive(true);
+            if (allTrue)
+            {
+                nextLevelPanel.SetActive(true);
+                inGamePanel.SetActive(false);
+            }
         }
 
         private void Control()
