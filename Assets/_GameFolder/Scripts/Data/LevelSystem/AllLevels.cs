@@ -8,6 +8,8 @@ namespace _GameFolder.Scripts.Data.LevelSystem
         [Header("Levels Array")]
         [SerializeField] private Level[] levelList;
 
+        public int activeLevel;
+
         #region Getters
 
         public Level[] LevelList => levelList;
