@@ -15,5 +15,5 @@ namespace _GameFolder.Scripts.Data
         public GameObject YellowFx => yellowFx;
 
         #endregion
-    }
+    } // END CLASS
 }

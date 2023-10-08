@@ -11,7 +11,7 @@ namespace _GameFolder.Scripts.Data.LevelSystem
         [Header("Level Settings")]
         [SerializeField] private int rowCount;
         [SerializeField] private int columnCount;
-        public List<RequiredValues> requiredValues;
+        [SerializeField] private List<RequiredValues> requiredValues;
         [SerializeField] private GameObject cellPrefab;
 
 
@@ -27,12 +27,8 @@ namespace _GameFolder.Scripts.Data.LevelSystem
         public int RowCount => rowCount;
         public int ColumnCount => columnCount;
         public GameObject CellPrefab => cellPrefab;
+        public List<RequiredValues> RequiredValuesList => requiredValues;
 
         #endregion
-
-        public IEnumerator GetEnumerator()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
+    } // END CLASS
 }

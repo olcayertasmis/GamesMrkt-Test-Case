@@ -5,15 +5,16 @@ namespace _GameFolder.Scripts.GridSystem
 {
     public class Cell : MonoBehaviour
     {
+        [Header("Variable")]
         private Vector2 _cellPos;
-
         public bool IsEmpty { get; private set; }
+
+        [Header("Other Scripts")]
         public Fruit fruitInCell;
 
+        [Header("Actions")]
         public Action<Vector2, Fruit> OnChangedFruit;
-
         public Action<Vector2, Fruit> OnMatchedFruit;
-
 
         public static Cell SpawnCell(GameObject cellPrefab, Vector2 pos, Transform cellSpawnTransform)
         {
@@ -53,5 +54,5 @@ namespace _GameFolder.Scripts.GridSystem
             fruitInCell = null;
             IsEmpty = true;
         }
-    }
+    } // END CLASS
 }

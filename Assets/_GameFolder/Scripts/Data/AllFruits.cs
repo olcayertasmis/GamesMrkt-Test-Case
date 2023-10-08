@@ -1,3 +1,4 @@
+using _GameFolder.Scripts.GridSystem;
 using UnityEngine;
 
 namespace _GameFolder.Scripts.Data
@@ -13,5 +14,5 @@ namespace _GameFolder.Scripts.Data
         public Fruit[] FruitList => fruitList;
 
         #endregion
-    }
+    } // END CLASS
 }

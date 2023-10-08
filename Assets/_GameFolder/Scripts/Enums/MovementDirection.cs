@@ -4,5 +4,5 @@ namespace _GameFolder.Scripts.Enums
     {
         Vertical,
         Horizontal
-    }
+    } // END CLASS
 }

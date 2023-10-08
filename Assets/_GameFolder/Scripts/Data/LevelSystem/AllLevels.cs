@@ -15,5 +15,5 @@ namespace _GameFolder.Scripts.Data.LevelSystem
         public Level[] LevelList => levelList;
 
         #endregion
-    }
+    } // END CLASS
 }

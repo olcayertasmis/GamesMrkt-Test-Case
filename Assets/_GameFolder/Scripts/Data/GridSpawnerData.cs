@@ -6,15 +6,13 @@ namespace _GameFolder.Scripts.Data
     public class GridSpawnerData : ScriptableObject
     {
         [SerializeField] private GameObject maskAreaPrefab;
-        [SerializeField] private Fruit fruitScript;
         [SerializeField] private Transform emptyTransform;
 
         #region Getters
 
         public GameObject MaskAreaPrefab => maskAreaPrefab;
-        public Fruit FruitScript => fruitScript;
         public Transform EmptyTransform => emptyTransform;
 
         #endregion
-    }
+    } // END CLASS
 }

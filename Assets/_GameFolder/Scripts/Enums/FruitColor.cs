@@ -6,5 +6,5 @@ namespace _GameFolder.Scripts.Enums
         Blue,
         Green,
         Yellow
-    }
+    } // END CLASS
 }
