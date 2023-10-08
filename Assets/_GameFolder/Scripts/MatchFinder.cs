@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using _GameFolder.Scripts.Enums;
 using _GameFolder.Scripts.GridSystem;
 using _GameFolder.Scripts.ManagerScripts;
 using DG.Tweening;
@@ -16,7 +18,7 @@ namespace _GameFolder.Scripts
         private DataManager _dataManager;
 
         [Header("List")]
-        [SerializeField] private List<Fruit> currentMatches;
+        private List<Fruit> _currentMatches = new List<Fruit>();
 
         private Transform _fruitSpawnTransform;
 
@@ -29,9 +31,9 @@ namespace _GameFolder.Scripts
 
         private void Start()
         {
-            Invoke(nameof(FindAllMatches), .5f);
-
             _fruitSpawnTransform = GameObject.Find("Fruits").transform;
+
+            Invoke(nameof(FindAllMatches), .5f);
         }
 
         public void FindAllMatches()
@@ -53,9 +55,9 @@ namespace _GameFolder.Scripts
                             {
                                 if (fruitTheLeft.FruitColorType == currentFruit.FruitColorType && fruitTheRight.FruitColorType == currentFruit.FruitColorType)
                                 {
-                                    currentMatches.Add(fruitTheLeft);
-                                    currentMatches.Add(currentFruit);
-                                    currentMatches.Add(fruitTheRight);
+                                    _currentMatches.Add(fruitTheLeft);
+                                    _currentMatches.Add(currentFruit);
+                                    _currentMatches.Add(fruitTheRight);
                                 }
                             }
                         }
@@ -69,9 +71,9 @@ namespace _GameFolder.Scripts
                             {
                                 if (fruitTheUnder.FruitColorType == currentFruit.FruitColorType && fruitTheAbove.FruitColorType == currentFruit.FruitColorType)
                                 {
-                                    currentMatches.Add(fruitTheUnder);
-                                    currentMatches.Add(currentFruit);
-                                    currentMatches.Add(fruitTheAbove);
+                                    _currentMatches.Add(fruitTheUnder);
+                                    _currentMatches.Add(currentFruit);
+                                    _currentMatches.Add(fruitTheAbove);
                                 }
                             }
                         }
@@ -79,26 +81,53 @@ namespace _GameFolder.Scripts
                 }
             }
 
-            if (currentMatches.Count > 0) currentMatches = currentMatches.Distinct().ToList();
+            if (_currentMatches.Count > 0) _currentMatches = _currentMatches.Distinct().ToList();
+
             DestroyMatchedFruits();
         }
 
         private void DestroyMatchedFruits()
         {
-            foreach (var fruit in currentMatches)
+            GameObject fx = null;
+            foreach (var fruit in _currentMatches)
             {
                 Vector2 pos = fruit.transform.position;
                 _gridSpawner.Cells[(int)pos.x, (int)pos.y].ClearCell();
+                _gridSpawner.Cells[(int)pos.x, (int)pos.y].UpdateMatchFinder(fruit);
                 fruit.gameObject.SetActive(false);
-                StartCoroutine(SlideFruitsDown());
+                fx = GetFx(fruit);
+                _gridSpawner.StartCoroutine(SlideFruitsDown(fx));
             }
 
-            currentMatches.Clear();
+            _currentMatches.Clear();
         }
 
-        private IEnumerator SlideFruitsDown()
+        private GameObject GetFx(Fruit fruit)
         {
-            yield return new WaitForSeconds(.3f);
+            switch (fruit.FruitColorType)
+            {
+                case FruitColor.Blue:
+                    var fxBlue = Instantiate(_dataManager.MatchFinderData.BlueFx, fruit.transform.position, Quaternion.identity);
+                    return fxBlue;
+                case FruitColor.Red:
+                    var fxRed = Instantiate(_dataManager.MatchFinderData.RedFx, fruit.transform.position, Quaternion.identity);
+                    return fxRed;
+                case FruitColor.Green:
+                    var fxGreen = Instantiate(_dataManager.MatchFinderData.GreenFx, fruit.transform.position, Quaternion.identity);
+                    return fxGreen;
+                case FruitColor.Yellow:
+                    var fxYellow = Instantiate(_dataManager.MatchFinderData.YellowFx, fruit.transform.position, Quaternion.identity);
+                    return fxYellow;
+            }
+
+            return null;
+        }
+
+        private IEnumerator SlideFruitsDown(GameObject fx)
+        {
+            yield return new WaitForSeconds(.2f);
+
+            fx.SetActive(false);
 
             int nullCounter = 0;
 
@@ -116,7 +145,7 @@ namespace _GameFolder.Scripts
 
                         fruit.transform.DOMoveY(newFruitPosY, .1f);
 
-                        _gridSpawner.Cells[x, y - nullCounter].UpdateFruits(_gridSpawner.Cells[x, y].fruitInCell);
+                        _gridSpawner.Cells[x, y - nullCounter].UpdateMatchFinder(_gridSpawner.Cells[x, y].fruitInCell);
                         _gridSpawner.Cells[x, y].ClearCell();
                     }
                 }
@@ -135,9 +164,14 @@ namespace _GameFolder.Scripts
             {
                 for (int y = 0; y < _gridSpawner.FruitRows.Count; y++)
                 {
-                    int fruitToUse = Random.Range(0, _dataManager.AllFruits.FruitList.Length);
+                    if (_gridSpawner.Cells[x, y] == null)
+                    {
+                        int fruitToUse = Random.Range(0, _dataManager.AllFruits.FruitList.Length);
 
-                    Fruit.FruitSpawn(_dataManager.AllFruits.FruitList[fruitToUse], new Vector2(x, y), _fruitSpawnTransform);
+                        var spawnedFruit = Fruit.FruitSpawn(_dataManager.AllFruits.FruitList[fruitToUse], new Vector2(x, y), _fruitSpawnTransform);
+
+                        _gridSpawner.Cells[x, y].UpdateMatchFinder(spawnedFruit);
+                    }
                 }
             }
         }
