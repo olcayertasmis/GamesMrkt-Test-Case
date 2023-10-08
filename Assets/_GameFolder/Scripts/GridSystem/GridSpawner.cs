@@ -20,7 +20,6 @@ namespace _GameFolder.Scripts.GridSystem
         private int _columnCount;
 
         [Header("Fruit")]
-        private Fruit _fruit;
         private AllFruits _allFruits;
         private Transform _fruitSpawnTransform;
 
@@ -40,7 +39,6 @@ namespace _GameFolder.Scripts.GridSystem
 
             _allFruits = dataManager.AllFruits;
 
-            _fruit = dataManager.GridSpawnerData.FruitScript;
             _maskAreaPrefab = dataManager.GridSpawnerData.MaskAreaPrefab;
 
             _cellSpawnTransform = Instantiate(dataManager.GridSpawnerData.EmptyTransform);
@@ -49,7 +47,7 @@ namespace _GameFolder.Scripts.GridSystem
             _fruitSpawnTransform = Instantiate(dataManager.GridSpawnerData.EmptyTransform);
             _fruitSpawnTransform.name = "Fruits";
 
-            var activeLevelIndex = Managers.Instance.LevelManager.GetActiveLevel();
+            var activeLevelIndex = dataManager.AllLevels.activeLevel;
             var activeLevel = dataManager.AllLevels.LevelList[activeLevelIndex];
 
             _rowCount = activeLevel.RowCount;
@@ -78,6 +76,12 @@ namespace _GameFolder.Scripts.GridSystem
             {
                 FruitRows[(int)pos.y][(int)pos.x] = fruit;
             }
+        }
+
+        private void OnMatchedFruit(Vector2 pos, Fruit fruit)
+        {
+            FruitColumns[(int)pos.x][(int)pos.y] = fruit;
+            FruitRows[(int)pos.y][(int)pos.x] = fruit;
         }
 
         #endregion
@@ -110,6 +114,7 @@ namespace _GameFolder.Scripts.GridSystem
 
                     Cells[x, y].Initialize(spawnedFruit, new Vector2(x, y));
                     Cells[x, y].OnChangedFruit += OnChangedFruit;
+                    Cells[x, y].OnMatchedFruit += OnMatchedFruit;
 
                     column.Add(spawnedFruit);
                 }
