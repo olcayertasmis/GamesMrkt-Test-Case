@@ -1,34 +1,71 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using _GameFolder.Scripts.Enums;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace _GameFolder.Scripts.ManagerScripts
 {
     public class GameManager : MonoBehaviour
     {
+        [Header("UI")]
         [SerializeField] private GameObject nextLevelPanel;
+        [SerializeField] private GameObject fruitImages;
 
         public List<FruitColor> requiredColor;
         public List<int> requiredValue;
 
         public List<int> activeTrueMatchCount = new List<int>();
-        private List<bool> _trueMatchControl = new List<bool>();
+        private readonly List<bool> _trueMatchControl = new List<bool>();
+
+        private string[] imagePaths = { "blue", "red", "green", "yellow" };
 
         private void Start()
         {
             nextLevelPanel.SetActive(false);
 
             var level = Managers.Instance.DataManager.AllLevels.LevelList[Managers.Instance.DataManager.AllLevels.activeLevel];
-            var req = level.requiredValues;
-            foreach (var x in req)
+            var required = level.RequiredValuesList;
+            foreach (var req in required)
             {
-                requiredColor.Add(x.requiredColor[0]);
-                requiredValue.Add(x.requiredColorNumber[0]);
+                requiredColor.Add(req.requiredColor[0]);
+                requiredValue.Add(req.requiredColorNumber[0]);
                 activeTrueMatchCount.Add(0);
                 _trueMatchControl.Add(false);
+            }
+
+            UpdateUI();
+        }
+
+        private void UpdateUI()
+        {
+            for (int i = 0; i < requiredColor.Count; i++)
+            {
+                var image = fruitImages.transform.GetChild(i);
+                image.gameObject.SetActive(true);
+                Image imageComponent = image.GetComponent<Image>();
+                TextMeshProUGUI tmpComponent = image.GetComponentInChildren<TextMeshProUGUI>();
+                switch (requiredColor[i])
+                {
+                    case FruitColor.Blue:
+                        imageComponent.sprite = Resources.Load<Sprite>(imagePaths[0]); // Blue resmi yükle
+                        tmpComponent.text = activeTrueMatchCount[i].ToString();
+                        break;
+                    case FruitColor.Red:
+                        imageComponent.sprite = Resources.Load<Sprite>(imagePaths[1]); // Red resmi yükle
+                        tmpComponent.text = activeTrueMatchCount[i].ToString();
+                        break;
+                    case FruitColor.Green:
+                        imageComponent.sprite = Resources.Load<Sprite>(imagePaths[2]); // Green resmi yükle
+                        tmpComponent.text = activeTrueMatchCount[i].ToString();
+                        break;
+                    case FruitColor.Yellow:
+                        imageComponent.sprite = Resources.Load<Sprite>(imagePaths[3]); // Yellow resmi yükle
+                        tmpComponent.text = activeTrueMatchCount[i].ToString();
+                        break;
+                }
             }
         }
 
@@ -68,6 +105,7 @@ namespace _GameFolder.Scripts.ManagerScripts
                 if (fruitColor == requiredColor[i] && requiredValue[i] >= activeTrueMatchCount[i])
                 {
                     activeTrueMatchCount[i]++;
+                    UpdateUI();
                 }
             }
         }
@@ -79,5 +117,5 @@ namespace _GameFolder.Scripts.ManagerScripts
             var scene = SceneManager.GetActiveScene().name;
             SceneManager.LoadScene(scene);
         }
-    }
+    } // END CLASS
 }
