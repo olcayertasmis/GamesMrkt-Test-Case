@@ -18,7 +18,7 @@ namespace _GameFolder.Scripts.GridSystem
         public static Cell SpawnCell(GameObject cellPrefab, Vector2 pos, Transform cellSpawnTransform)
         {
             GameObject cell = Instantiate(cellPrefab, pos, Quaternion.identity);
-            cell.transform.parent = cellSpawnTransform;
+            cell.transform.SetParent(cellSpawnTransform);
             cell.name = "Cell - " + pos.x + "," + pos.y;
 
             return cell.GetComponent<Cell>();
